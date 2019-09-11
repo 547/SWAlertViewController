@@ -25,6 +25,12 @@ open class CFAlertViewController: UIViewController    {
         case actionSheet
         case notification
     }
+    @objc public enum CFAlertControllerActionsArrangement : Int {
+        ///每行显示1个按钮，可以显示N多个按钮
+        case vertical = 0
+        ///每行显示2个按钮，只可以显示2个按钮
+        case horizontal
+    }
     @objc public enum CFAlertControllerBackgroundStyle : Int {
         case plain = 0
         case blur
@@ -46,6 +52,7 @@ open class CFAlertViewController: UIViewController    {
     // MARK: Public
     public internal(set) var textAlignment = NSTextAlignment(rawValue: 0)
     public internal(set) var margin:Any? = nil
+    public internal(set) var actionsArrangement = CFAlertControllerActionsArrangement.vertical
     public internal(set) var preferredStyle = CFAlertControllerStyle(rawValue: 0)    {
         didSet  {
             DispatchQueue.main.async {
@@ -260,6 +267,7 @@ open class CFAlertViewController: UIViewController    {
                                             borderColor:UIColor?,
                                             borderWidth:Any?,
                                             preferredStyle: CFAlertControllerStyle,
+                                            actionsArrangement:CFAlertControllerActionsArrangement,
                                             didDismissAlertHandler dismiss: CFAlertViewControllerDismissBlock?) -> CFAlertViewController {
         
         return CFAlertViewController.alertController(title: title,
@@ -280,6 +288,7 @@ open class CFAlertViewController: UIViewController    {
                                                      borderColor:borderColor,
                                                      borderWidth:borderWidth,
                                                      preferredStyle: preferredStyle,
+                                                     actionsArrangement: actionsArrangement,
                                                      headerView: nil,
                                                      footerView: nil,
                                                      didDismissAlertHandler: dismiss)
@@ -303,6 +312,7 @@ open class CFAlertViewController: UIViewController    {
                                             borderColor:UIColor?,
                                             borderWidth:Any?,
                                             preferredStyle: CFAlertControllerStyle,
+                                            actionsArrangement:CFAlertControllerActionsArrangement,
                                             headerView: UIView?,
                                             footerView: UIView?,
                                             didDismissAlertHandler dismiss: CFAlertViewControllerDismissBlock?) -> CFAlertViewController {
@@ -326,6 +336,7 @@ open class CFAlertViewController: UIViewController    {
                                           borderColor:borderColor,
                                           borderWidth:borderWidth,
                                           preferredStyle: preferredStyle,
+                                          actionsArrangement: actionsArrangement,
                                           headerView: headerView,
                                           footerView: footerView,
                                           didDismissAlertHandler: dismiss)
@@ -347,6 +358,7 @@ open class CFAlertViewController: UIViewController    {
                                   borderColor:UIColor?,
                                   borderWidth:Any?,
                                   preferredStyle: CFAlertControllerStyle,
+                                  actionsArrangement:CFAlertControllerActionsArrangement,
                                   didDismissAlertHandler dismiss: CFAlertViewControllerDismissBlock?) {
         
         // Create New Instance Of Alert Controller
@@ -368,6 +380,7 @@ open class CFAlertViewController: UIViewController    {
                   borderColor:borderColor,
                   borderWidth:borderWidth,
                   preferredStyle: preferredStyle,
+                  actionsArrangement: actionsArrangement,
                   headerView: nil,
                   footerView: nil,
                   didDismissAlertHandler: dismiss)
@@ -391,6 +404,7 @@ open class CFAlertViewController: UIViewController    {
                                   borderColor:UIColor?,
                                   borderWidth:Any?,
                                   preferredStyle: CFAlertControllerStyle,
+                                  actionsArrangement:CFAlertControllerActionsArrangement,
                                   headerView: UIView?,
                                   footerView: UIView?,
                                   didDismissAlertHandler dismiss: CFAlertViewControllerDismissBlock?) {
@@ -824,6 +838,10 @@ open class CFAlertViewController: UIViewController    {
 
 
 extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFAlertActionTableViewCellDelegate {
+    public func alertActionCell(_ cell: UITableViewCell, didClickAction action: CFAlertAction?) {
+        
+    }
+    
     
     // MARK: - UITableViewDataSource
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -879,35 +897,58 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
             }
             
         case 1:
-            // Get Action Cell Instance
-            cell = tableView.dequeueReusableCell(withIdentifier: CFAlertActionTableViewCell.identifier())
-            let actionCell: CFAlertActionTableViewCell? = (cell as? CFAlertActionTableViewCell)
-            // Set Delegate
-            actionCell?.delegate = self
-            // Set Action
-            actionCell?.action = self.actionList[indexPath.row]
-            // Set Top Margin For First Action
-            if indexPath.row == 0 {
+            if actionsArrangement == .horizontal, (self.actions?.count ?? 0) >= 2 {
+                // Get Action Cell Instance
+                cell = tableView.dequeueReusableCell(withIdentifier: CFAlertDoubleActionTableViewCell.identifier())
+                let actionCell: CFAlertDoubleActionTableViewCell? = (cell as? CFAlertDoubleActionTableViewCell)
+                // Set Delegate
+                actionCell?.delegate = self
+                // Set Action
+                actionCell?.leftAction = self.actionList[0]
+                actionCell?.leftAction = self.actionList[1]
+                // Set Top Margin For First Action
                 if let titleString = titleString, let messageString = messageString, (!titleString.isEmpty && !messageString.isEmpty)   {
-                    actionCell?.actionButtonTopMargin = 12.0
+                    actionCell?.actionButtonsTopMargin = 12.0
+                }else {
+                    actionCell?.actionButtonsTopMargin = 20.0
                 }
-                else {
-                    actionCell?.actionButtonTopMargin = 20.0
-                }
-            }
-            else    {
-                actionCell?.actionButtonTopMargin = 0.0
-            }
-            // Set Bottom Margin For Last Action
-            if indexPath.row == self.actionList.count - 1 {
+                // Set Bottom Margin For Last Action
                 if indexPath.row > 0    {
+                    actionCell?.actionButtonsTopMargin = 0.0
+                }
+                actionCell?.actionButtonsBottomMargin = 20.0
+            }else {
+                // Get Action Cell Instance
+                cell = tableView.dequeueReusableCell(withIdentifier: CFAlertActionTableViewCell.identifier())
+                let actionCell: CFAlertActionTableViewCell? = (cell as? CFAlertActionTableViewCell)
+                // Set Delegate
+                actionCell?.delegate = self
+                // Set Action
+                actionCell?.action = self.actionList[indexPath.row]
+                // Set Top Margin For First Action
+                if indexPath.row == 0 {
+                    if let titleString = titleString, let messageString = messageString, (!titleString.isEmpty && !messageString.isEmpty)   {
+                        actionCell?.actionButtonTopMargin = 12.0
+                    }
+                    else {
+                        actionCell?.actionButtonTopMargin = 20.0
+                    }
+                }
+                else    {
                     actionCell?.actionButtonTopMargin = 0.0
                 }
-                actionCell?.actionButtonBottomMargin = 20.0
+                // Set Bottom Margin For Last Action
+                if indexPath.row == self.actionList.count - 1 {
+                    if indexPath.row > 0    {
+                        actionCell?.actionButtonTopMargin = 0.0
+                    }
+                    actionCell?.actionButtonBottomMargin = 20.0
+                }
+                else {
+                    actionCell?.actionButtonBottomMargin = 10.0
+                }
             }
-            else {
-                actionCell?.actionButtonBottomMargin = 10.0
-            }
+            
             
         default:
             break

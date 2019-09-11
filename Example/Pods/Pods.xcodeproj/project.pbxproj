@@ -32,6 +32,8 @@
 		5C2ACDE02328D6BE001D109A /* CFAlertNotificationInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDD02328D6BE001D109A /* CFAlertNotificationInteractiveTransition.swift */; };
 		5C2ACDE12328D6BE001D109A /* CFAlertBaseInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDD22328D6BE001D109A /* CFAlertBaseInteractiveTransition.swift */; };
 		5C2ACDE22328D6BE001D109A /* CFAlertBaseTransitionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDD32328D6BE001D109A /* CFAlertBaseTransitionGestureRecognizer.swift */; };
+		5C2ACDE52328F2B6001D109A /* CFAlertDoubleActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDE32328F2B6001D109A /* CFAlertDoubleActionTableViewCell.swift */; };
+		5C2ACDE62328F2B6001D109A /* CFAlertDoubleActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C2ACDE42328F2B6001D109A /* CFAlertDoubleActionTableViewCell.xib */; };
 		6AE239C5D116E1C06F5705699FB9EAF0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E601BD54DA9BF4071437E60125281FA /* XCTest.framework */; };
 		6DBC8EB7532E931C2FBDA71D1E0B66A4 /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A83AE4362CF1D4764E00E4602A2D648 /* FBSnapshotTestCase-dummy.m */; };
 		7022394FE1CEE1EB2FF30B53D8C15CC9 /* SWAlertViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 206D218ADA14A1B7CB38A6E622DE3E2B /* SWAlertViewController-dummy.m */; };
@@ -107,6 +109,8 @@
 		5C2ACDD02328D6BE001D109A /* CFAlertNotificationInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertNotificationInteractiveTransition.swift; sourceTree = "<group>"; };
 		5C2ACDD22328D6BE001D109A /* CFAlertBaseInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertBaseInteractiveTransition.swift; sourceTree = "<group>"; };
 		5C2ACDD32328D6BE001D109A /* CFAlertBaseTransitionGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertBaseTransitionGestureRecognizer.swift; sourceTree = "<group>"; };
+		5C2ACDE32328F2B6001D109A /* CFAlertDoubleActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAlertDoubleActionTableViewCell.swift; sourceTree = "<group>"; };
+		5C2ACDE42328F2B6001D109A /* CFAlertDoubleActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CFAlertDoubleActionTableViewCell.xib; sourceTree = "<group>"; };
 		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E28C7781E73A210F95D5DBBCFC5AAAF /* SWAlertViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SWAlertViewController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5E601BD54DA9BF4071437E60125281FA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -233,10 +237,12 @@
 		5C2ACDBC2328D6BE001D109A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5C2ACDC02328D6BE001D109A /* CFAlertActionTableViewCell.swift */,
 				5C2ACDBD2328D6BE001D109A /* CFAlertActionTableViewCell.xib */,
 				5C2ACDBE2328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.swift */,
 				5C2ACDBF2328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.xib */,
-				5C2ACDC02328D6BE001D109A /* CFAlertActionTableViewCell.swift */,
+				5C2ACDE32328F2B6001D109A /* CFAlertDoubleActionTableViewCell.swift */,
+				5C2ACDE42328F2B6001D109A /* CFAlertDoubleActionTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -632,6 +638,7 @@
 			files = (
 				5C2ACDD62328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.xib in Resources */,
 				5C2ACDD42328D6BE001D109A /* CFAlertActionTableViewCell.xib in Resources */,
+				5C2ACDE62328F2B6001D109A /* CFAlertDoubleActionTableViewCell.xib in Resources */,
 				5C2ACDD82328D6BE001D109A /* CFAlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,6 +697,7 @@
 				5C2ACDDA2328D6BE001D109A /* CFAlertViewController.swift in Sources */,
 				9D65089019D558E5A9661F2DCAD20313 /* SwiftSupport.swift in Sources */,
 				11C410135C7E89353B480AC8DE0BFB77 /* UIApplication+StrictKeyWindow.m in Sources */,
+				5C2ACDE52328F2B6001D109A /* CFAlertDoubleActionTableViewCell.swift in Sources */,
 				5C2ACDE22328D6BE001D109A /* CFAlertBaseTransitionGestureRecognizer.swift in Sources */,
 				5C2ACDDD2328D6BE001D109A /* CFAlertActionSheetInteractiveTransition.swift in Sources */,
 				5C2ACDD92328D6BE001D109A /* CFPushButton.swift in Sources */,
@@ -783,7 +791,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase.modulemap";
 				PRODUCT_MODULE_NAME = FBSnapshotTestCase;
@@ -815,7 +823,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SWAlertViewController_Tests/Pods-SWAlertViewController_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SWAlertViewController_Tests/Pods-SWAlertViewController_Tests.modulemap";
@@ -881,7 +889,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -943,7 +951,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -972,7 +980,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SWAlertViewController_Example/Pods-SWAlertViewController_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SWAlertViewController_Example/Pods-SWAlertViewController_Example.modulemap";
@@ -1005,7 +1013,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SWAlertViewController_Tests/Pods-SWAlertViewController_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SWAlertViewController_Tests/Pods-SWAlertViewController_Tests.modulemap";
@@ -1038,7 +1046,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SWAlertViewController_Example/Pods-SWAlertViewController_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SWAlertViewController_Example/Pods-SWAlertViewController_Example.modulemap";
@@ -1072,7 +1080,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase.modulemap";
 				PRODUCT_MODULE_NAME = FBSnapshotTestCase;
