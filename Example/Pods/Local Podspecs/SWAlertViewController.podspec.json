@@ -1,0 +1,22 @@
+{
+  "name": "SWAlertViewController",
+  "version": "0.1.0",
+  "summary": "A short description of SWAlertViewController.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/547/SWAlertViewController",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "547": "timer_sevenwang@163.com"
+  },
+  "source": {
+    "git": "https://github.com/547/SWAlertViewController.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SWAlertViewController/Classes/**/*"
+}
