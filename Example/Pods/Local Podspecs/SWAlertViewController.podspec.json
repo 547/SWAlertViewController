@@ -1,8 +1,8 @@
 {
   "name": "SWAlertViewController",
   "version": "0.1.0",
-  "summary": "A short description of SWAlertViewController.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "基于CFAlertViewController修改的自定义性更强的AlertViewController.",
+  "description": "基于CFAlertViewController修改的自定义性更强的AlertViewController.可以修改字体，颜色，两个并列的按钮",
   "homepage": "https://github.com/547/SWAlertViewController",
   "license": {
     "type": "MIT",
@@ -16,7 +16,9 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "SWAlertViewController/Classes/**/*"
+  "source_files": "SWAlertViewController/Classes/**/*",
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
 }

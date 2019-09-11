@@ -9,50 +9,50 @@
 /* Begin PBXBuildFile section */
 		00224C929D57F45B70E87359E719948D /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E29C50D3CDB46CBCBD20AFA13EB3D8D /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06C8DDCB8C16C1BBB2789AFEA43AE508 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
+		0AE57F1F4EB46524F46645EF3DBAF46C /* CFAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C722066D37A7DD64EEAC4FE8EF64F8 /* CFAlertViewController.swift */; };
 		11C410135C7E89353B480AC8DE0BFB77 /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1FE5C23F1BC485C54B92C32E78391F /* UIApplication+StrictKeyWindow.m */; };
 		14AD81D52FAD9CF2C065C61FB00C3B4F /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = E0956940883830C651240E754E3ECC52 /* UIImage+Diff.m */; };
 		14C511527597E5846AB2627F791C7D8E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 716A9972B9D9103B54DB950893FAF104 /* QuartzCore.framework */; };
 		153974237D8A2E4B016E1FF74FF65981 /* Pods-SWAlertViewController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72727306C84A4F07EECDD457FE49280C /* Pods-SWAlertViewController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		262174DA25CBFAE8A551FC7F13718312 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
 		2DCFF0CE0BD295F1D46D3247F36B192C /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = EF53D290F564A9B10CEF56C9DC2010F2 /* UIImage+Compare.m */; };
+		33B9B8518496E5DC630944CC5FB44EB9 /* CFAlertActionTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = D26692DA754D75F887AAB90A3DBE0E9B /* CFAlertActionTableViewCell.xib */; };
+		391D41771B2F14FC4C622DB051624FCF /* CFAlertTitleSubtitleTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 262489457DBA30311A8B5D54AF764250 /* CFAlertTitleSubtitleTableViewCell.xib */; };
 		3A060DB9A82396A80A07E1113615F284 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
+		3C357054808275C348D862B83B164FB7 /* CFAlertDoubleActionTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 593181F0763A0171774F683BFA889E07 /* CFAlertDoubleActionTableViewCell.xib */; };
+		3EB0BFA0334AADA078FCC0A113EE29CE /* CFAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB72AB75A77C106750BD058AFB6AC93 /* CFAlertAction.swift */; };
 		40039E0AF0D764360B1D4FC4F7950D2E /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A3ACA72AE9B776E644F6D159AB3E80B /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5479793503B6E46877C894197A3C06ED /* SWAlertViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ED746CDAA44A708F69B78A3A0111E0C /* SWAlertViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C2ACDD42328D6BE001D109A /* CFAlertActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C2ACDBD2328D6BE001D109A /* CFAlertActionTableViewCell.xib */; };
-		5C2ACDD52328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDBE2328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.swift */; };
-		5C2ACDD62328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C2ACDBF2328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.xib */; };
-		5C2ACDD72328D6BE001D109A /* CFAlertActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDC02328D6BE001D109A /* CFAlertActionTableViewCell.swift */; };
-		5C2ACDD82328D6BE001D109A /* CFAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C2ACDC12328D6BE001D109A /* CFAlertViewController.xib */; };
-		5C2ACDD92328D6BE001D109A /* CFPushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDC42328D6BE001D109A /* CFPushButton.swift */; };
-		5C2ACDDA2328D6BE001D109A /* CFAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDC52328D6BE001D109A /* CFAlertViewController.swift */; };
-		5C2ACDDB2328D6BE001D109A /* CFAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDC72328D6BE001D109A /* CFAlertAction.swift */; };
-		5C2ACDDC2328D6BE001D109A /* CFAlertPopupTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDCA2328D6BE001D109A /* CFAlertPopupTransition.swift */; };
-		5C2ACDDD2328D6BE001D109A /* CFAlertActionSheetInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDCC2328D6BE001D109A /* CFAlertActionSheetInteractiveTransition.swift */; };
-		5C2ACDDE2328D6BE001D109A /* CFAlertActionSheetTransitionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDCD2328D6BE001D109A /* CFAlertActionSheetTransitionGestureRecognizer.swift */; };
-		5C2ACDDF2328D6BE001D109A /* CFAlertNotificationTransitionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDCF2328D6BE001D109A /* CFAlertNotificationTransitionGestureRecognizer.swift */; };
-		5C2ACDE02328D6BE001D109A /* CFAlertNotificationInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDD02328D6BE001D109A /* CFAlertNotificationInteractiveTransition.swift */; };
-		5C2ACDE12328D6BE001D109A /* CFAlertBaseInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDD22328D6BE001D109A /* CFAlertBaseInteractiveTransition.swift */; };
-		5C2ACDE22328D6BE001D109A /* CFAlertBaseTransitionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDD32328D6BE001D109A /* CFAlertBaseTransitionGestureRecognizer.swift */; };
-		5C2ACDE52328F2B6001D109A /* CFAlertDoubleActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACDE32328F2B6001D109A /* CFAlertDoubleActionTableViewCell.swift */; };
-		5C2ACDE62328F2B6001D109A /* CFAlertDoubleActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C2ACDE42328F2B6001D109A /* CFAlertDoubleActionTableViewCell.xib */; };
+		4928AE0659C86797436A4B226C75F23F /* CFAlertDoubleActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECF55EAE55AE18A37EED142A096BF5 /* CFAlertDoubleActionTableViewCell.swift */; };
+		533910FA8FB67A2244395CD5734F1BBF /* CFAlertActionSheetTransitionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21805D10BEBECF3A97E47A2ACA52545 /* CFAlertActionSheetTransitionGestureRecognizer.swift */; };
+		58B67ECB59FA564E5EF2FA438B6CC385 /* CFAlertActionSheetInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C20AEC831BB6588C836336D28897DD /* CFAlertActionSheetInteractiveTransition.swift */; };
 		6AE239C5D116E1C06F5705699FB9EAF0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E601BD54DA9BF4071437E60125281FA /* XCTest.framework */; };
+		6C15A2EFE47FA8F8FA86E99BDB23DB8A /* CFAlertTitleSubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDE05E1AD9E64038820276D37AE8313 /* CFAlertTitleSubtitleTableViewCell.swift */; };
 		6DBC8EB7532E931C2FBDA71D1E0B66A4 /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A83AE4362CF1D4764E00E4602A2D648 /* FBSnapshotTestCase-dummy.m */; };
-		7022394FE1CEE1EB2FF30B53D8C15CC9 /* SWAlertViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 206D218ADA14A1B7CB38A6E622DE3E2B /* SWAlertViewController-dummy.m */; };
 		724B52385F60DD994884C29CF927DF66 /* Pods-SWAlertViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834E2763E7AC364F297DC526CAD712C /* Pods-SWAlertViewController_Example-dummy.m */; };
+		7CC98F23066EA886832CEF75158392BD /* CFAlertBaseInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5833D88661A7AED060ABF8620E6889D2 /* CFAlertBaseInteractiveTransition.swift */; };
 		88396E68DC05A379282F3B374F75F43C /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE35F81C954881204729C569018D98C0 /* FBSnapshotTestController.m */; };
 		8CE3BF0ACE07EA42DD5DAC871BF4B767 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C8BBFE2D9E3A9C566221B1DE04E91C /* FBSnapshotTestCase.m */; };
 		90142C6259374E18E640396A59AD379A /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = 88EE4F95531D217A595AA8D85A24FA39 /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		920224E349A20EA973E9A59FE2B8B8C0 /* CFAlertBaseTransitionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E171053A90D8DD614DD19539E0CB9938 /* CFAlertBaseTransitionGestureRecognizer.swift */; };
 		9D65089019D558E5A9661F2DCAD20313 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2DF1ABBBD85F5E079D7D0EB5479BC /* SwiftSupport.swift */; };
+		9EC40D6B3183EB3E3DF8ECEFF100AE75 /* CFAlertViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 784C94FDDECBA0FB43CAAB5D1FC11C49 /* CFAlertViewController.xib */; };
 		A525E29E0A8079B35B793D8A2B5FBDF2 /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = AA172EA1A198EEFBE0794EACF7993C02 /* UIImage+Snapshot.m */; };
+		ABF81ABC8525D81FCF147B81E15A9C8D /* CFAlertNotificationInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3725601E66CC92B2BD4FCC7A6FA66614 /* CFAlertNotificationInteractiveTransition.swift */; };
 		B159739D8E301E68F994D97B7AD90A59 /* Pods-SWAlertViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFF51A4348BBD10653F8FD391A56A76 /* Pods-SWAlertViewController_Tests-dummy.m */; };
 		B25D795BDC4F426BC01EFC911F368B81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
+		B32D85F7464CA833AF9FC23D39D15DBE /* CFAlertPopupTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BA696AAD782AADC9A28723AFDEB546 /* CFAlertPopupTransition.swift */; };
+		B497EE4135D6E9E9B428E836CFD676F3 /* CFAlertNotificationTransitionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C68D1CF7526EAD7ADDEFBC054FB9AC0 /* CFAlertNotificationTransitionGestureRecognizer.swift */; };
 		B74CD6E6EBEA0B642776BCB37850415D /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = EA718A72E676291836EBB46B85242155 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C18FE6D4396FD7F94115484EF3D02606 /* SWAlertViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2368113CEF1FD4BB049214DEB1641509 /* SWAlertViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C49D52712466511E332C952834C81FE1 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = D3067EAFD5B0A06885968D137840DB70 /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D04AAC8B22E4A4DC4F39891C4E52F251 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = E354F8FD537351F26F7949B4EBFA5101 /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		D546720F21749A7503C16A097C7FBF7E /* CFAlertActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E2A9C6E1655C4267FEC7854A7CF54A /* CFAlertActionTableViewCell.swift */; };
 		E0B8D095C732352C854D365B9E5B993D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAA89EEF1039078430D7A886477E365 /* UIKit.framework */; };
+		E691094E150326D741FB2C5969D54904 /* SWAlertViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5FEFD68D0C899AFF7DEC5098E5AB91 /* SWAlertViewController-dummy.m */; };
 		E8AC509D18EBF21B1FEA909652A01108 /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0B81AC7DF4855803A0FA70985F8A99 /* FBSnapshotTestCasePlatform.m */; };
 		F1AAAE00BB32B733B238E2B4E8424506 /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = A25844C26701FA4BCAEF64150B56777F /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		F3E0350E61C5C9EEEE6B37D855BEF89E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
 		F720FAF13A108CE6901E0A8B0580E1E8 /* FBSnapshotTestCase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E621F768263424D9C5C35D58513625CB /* FBSnapshotTestCase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8A90414D92CF28220A7F4B1BFFE0A61 /* CFPushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E75E773A01AA04EBE4EB762FF9B44 /* CFPushButton.swift */; };
 		FA8D06435C8FF54FDD2AC81EECF0709A /* Pods-SWAlertViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F04C9B4672861898A3B45EE3832CA70 /* Pods-SWAlertViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -83,51 +83,46 @@
 /* Begin PBXFileReference section */
 		0A3ACA72AE9B776E644F6D159AB3E80B /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
 		0BBDFFC4DA5A43993CDB3DB42448A43F /* Pods-SWAlertViewController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SWAlertViewController_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		11306FB0F608EB28CAB59C6B848FB50B /* SWAlertViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWAlertViewController.xcconfig; sourceTree = "<group>"; };
+		12E2A9C6E1655C4267FEC7854A7CF54A /* CFAlertActionTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFAlertActionTableViewCell.swift; sourceTree = "<group>"; };
 		13C8BBFE2D9E3A9C566221B1DE04E91C /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = FBSnapshotTestCase/FBSnapshotTestCase.m; sourceTree = "<group>"; };
+		148E75E773A01AA04EBE4EB762FF9B44 /* CFPushButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFPushButton.swift; sourceTree = "<group>"; };
 		1834E2763E7AC364F297DC526CAD712C /* Pods-SWAlertViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SWAlertViewController_Example-dummy.m"; sourceTree = "<group>"; };
+		19BA696AAD782AADC9A28723AFDEB546 /* CFAlertPopupTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFAlertPopupTransition.swift; sourceTree = "<group>"; };
 		1B8ABEEA76ECDF1975B6D0787700F929 /* FBSnapshotTestCase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FBSnapshotTestCase-Info.plist"; sourceTree = "<group>"; };
-		206D218ADA14A1B7CB38A6E622DE3E2B /* SWAlertViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWAlertViewController-dummy.m"; sourceTree = "<group>"; };
+		1EDE05E1AD9E64038820276D37AE8313 /* CFAlertTitleSubtitleTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFAlertTitleSubtitleTableViewCell.swift; sourceTree = "<group>"; };
+		2368113CEF1FD4BB049214DEB1641509 /* SWAlertViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWAlertViewController-umbrella.h"; sourceTree = "<group>"; };
+		24C33EE401536D8CF2B4DAF35AFC0B5E /* SWAlertViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWAlertViewController-prefix.pch"; sourceTree = "<group>"; };
+		262489457DBA30311A8B5D54AF764250 /* CFAlertTitleSubtitleTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = CFAlertTitleSubtitleTableViewCell.xib; sourceTree = "<group>"; };
+		3725601E66CC92B2BD4FCC7A6FA66614 /* CFAlertNotificationInteractiveTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFAlertNotificationInteractiveTransition.swift; sourceTree = "<group>"; };
 		399B88990A4F710808D155D937CDC2E1 /* Pods-SWAlertViewController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SWAlertViewController_Example.modulemap"; sourceTree = "<group>"; };
 		3A83AE4362CF1D4764E00E4602A2D648 /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
 		3E29C50D3CDB46CBCBD20AFA13EB3D8D /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
-		3ED746CDAA44A708F69B78A3A0111E0C /* SWAlertViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWAlertViewController-umbrella.h"; sourceTree = "<group>"; };
 		418E0471655A8CDB5EB2C290498D2FD3 /* FBSnapshotTestCase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.xcconfig; sourceTree = "<group>"; };
-		4E6D84F05BA5B4881D6BDDB8DBD3C2BC /* SWAlertViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWAlertViewController-prefix.pch"; sourceTree = "<group>"; };
+		42C20AEC831BB6588C836336D28897DD /* CFAlertActionSheetInteractiveTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFAlertActionSheetInteractiveTransition.swift; sourceTree = "<group>"; };
 		50866A7F985FB95C2F81D50A0324165E /* Pods-SWAlertViewController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SWAlertViewController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		5C2ACDBD2328D6BE001D109A /* CFAlertActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFAlertActionTableViewCell.xib; sourceTree = "<group>"; };
-		5C2ACDBE2328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertTitleSubtitleTableViewCell.swift; sourceTree = "<group>"; };
-		5C2ACDBF2328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFAlertTitleSubtitleTableViewCell.xib; sourceTree = "<group>"; };
-		5C2ACDC02328D6BE001D109A /* CFAlertActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertActionTableViewCell.swift; sourceTree = "<group>"; };
-		5C2ACDC12328D6BE001D109A /* CFAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFAlertViewController.xib; sourceTree = "<group>"; };
-		5C2ACDC42328D6BE001D109A /* CFPushButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFPushButton.swift; sourceTree = "<group>"; };
-		5C2ACDC52328D6BE001D109A /* CFAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertViewController.swift; sourceTree = "<group>"; };
-		5C2ACDC72328D6BE001D109A /* CFAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertAction.swift; sourceTree = "<group>"; };
-		5C2ACDCA2328D6BE001D109A /* CFAlertPopupTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertPopupTransition.swift; sourceTree = "<group>"; };
-		5C2ACDCC2328D6BE001D109A /* CFAlertActionSheetInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertActionSheetInteractiveTransition.swift; sourceTree = "<group>"; };
-		5C2ACDCD2328D6BE001D109A /* CFAlertActionSheetTransitionGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertActionSheetTransitionGestureRecognizer.swift; sourceTree = "<group>"; };
-		5C2ACDCF2328D6BE001D109A /* CFAlertNotificationTransitionGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertNotificationTransitionGestureRecognizer.swift; sourceTree = "<group>"; };
-		5C2ACDD02328D6BE001D109A /* CFAlertNotificationInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertNotificationInteractiveTransition.swift; sourceTree = "<group>"; };
-		5C2ACDD22328D6BE001D109A /* CFAlertBaseInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertBaseInteractiveTransition.swift; sourceTree = "<group>"; };
-		5C2ACDD32328D6BE001D109A /* CFAlertBaseTransitionGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertBaseTransitionGestureRecognizer.swift; sourceTree = "<group>"; };
-		5C2ACDE32328F2B6001D109A /* CFAlertDoubleActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAlertDoubleActionTableViewCell.swift; sourceTree = "<group>"; };
-		5C2ACDE42328F2B6001D109A /* CFAlertDoubleActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CFAlertDoubleActionTableViewCell.xib; sourceTree = "<group>"; };
-		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E28C7781E73A210F95D5DBBCFC5AAAF /* SWAlertViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SWAlertViewController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5833D88661A7AED060ABF8620E6889D2 /* CFAlertBaseInteractiveTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFAlertBaseInteractiveTransition.swift; sourceTree = "<group>"; };
+		593181F0763A0171774F683BFA889E07 /* CFAlertDoubleActionTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = CFAlertDoubleActionTableViewCell.xib; sourceTree = "<group>"; };
+		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSnapshotTestCase.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E601BD54DA9BF4071437E60125281FA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5F04C9B4672861898A3B45EE3832CA70 /* Pods-SWAlertViewController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SWAlertViewController_Example-umbrella.h"; sourceTree = "<group>"; };
+		60E8D629046A09C8E052032F69268CB2 /* SWAlertViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SWAlertViewController-Info.plist"; sourceTree = "<group>"; };
 		60FF67A6054DEFE18C39A033F0E36670 /* Pods-SWAlertViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SWAlertViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6B71FBA73C57C246E44EC98DE1B84D93 /* Pods-SWAlertViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SWAlertViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6D20672B3E5C651DF14948D9EEE257C4 /* Pods-SWAlertViewController_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SWAlertViewController_Example-Info.plist"; sourceTree = "<group>"; };
+		7044DBA36FAFF0BECCC88148B90BC49A /* SWAlertViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SWAlertViewController.modulemap; sourceTree = "<group>"; };
 		716A9972B9D9103B54DB950893FAF104 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		72727306C84A4F07EECDD457FE49280C /* Pods-SWAlertViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SWAlertViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
 		746CC9C9E1B0E104CD1BA120C69A2526 /* FBSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
-		74E463C3CCF079E9F91A17E6136970BD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		784C94FDDECBA0FB43CAAB5D1FC11C49 /* CFAlertViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = CFAlertViewController.xib; path = SWAlertViewController/Classes/CFAlertViewController/CFAlertViewController.xib; sourceTree = "<group>"; };
 		7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7C68D1CF7526EAD7ADDEFBC054FB9AC0 /* CFAlertNotificationTransitionGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFAlertNotificationTransitionGestureRecognizer.swift; sourceTree = "<group>"; };
+		7D57BA7587DA83DF711D71B48F289E24 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		82D2DF1ABBBD85F5E079D7D0EB5479BC /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
 		855A43AABD49107D2A4890AB57F04114 /* Pods-SWAlertViewController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SWAlertViewController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		86BEAB4416F9D05585B3DBEE33AC2DE7 /* Pods-SWAlertViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SWAlertViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		86F5F7B4E781BB8EC834A8CAC6C7619D /* SWAlertViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SWAlertViewController-Info.plist"; sourceTree = "<group>"; };
 		88EE4F95531D217A595AA8D85A24FA39 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
+		8B5FEFD68D0C899AFF7DEC5098E5AB91 /* SWAlertViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWAlertViewController-dummy.m"; sourceTree = "<group>"; };
 		8CAA89EEF1039078430D7A886477E365 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8E6E4153AD45A849056FDBC2C2E165F5 /* Pods-SWAlertViewController_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SWAlertViewController_Tests-Info.plist"; sourceTree = "<group>"; };
 		8F1FE5C23F1BC485C54B92C32E78391F /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
@@ -135,29 +130,42 @@
 		98FD387DFA194173633270BAF1BCD859 /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
 		9926416148586EE1E4A74A3352E864FF /* Pods-SWAlertViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SWAlertViewController_Tests.modulemap"; sourceTree = "<group>"; };
 		9A7935602E005662C3C2D3174AAB0B89 /* Pods-SWAlertViewController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SWAlertViewController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9B5E98C6674F955FF08209BC84D2D29E /* Pods_SWAlertViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SWAlertViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9B5E98C6674F955FF08209BC84D2D29E /* Pods_SWAlertViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SWAlertViewController_Example.framework; path = "Pods-SWAlertViewController_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A25844C26701FA4BCAEF64150B56777F /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
+		A5ECF55EAE55AE18A37EED142A096BF5 /* CFAlertDoubleActionTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFAlertDoubleActionTableViewCell.swift; sourceTree = "<group>"; };
 		AA172EA1A198EEFBE0794EACF7993C02 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
 		AD0B81AC7DF4855803A0FA70985F8A99 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
-		B2ABDB6B56B37C37E1A96542E15303CA /* SWAlertViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWAlertViewController.xcconfig; sourceTree = "<group>"; };
-		B746FEC823D28341E576B5E566F328F5 /* SWAlertViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWAlertViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B746FEC823D28341E576B5E566F328F5 /* SWAlertViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SWAlertViewController.framework; path = SWAlertViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC91FE5610FF112CC31AB299DA9323F6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		BD1C82CA35F60DC549E442760AED9374 /* Pods-SWAlertViewController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SWAlertViewController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		C4DF430F881DFD921A5072E2F4648262 /* SWAlertViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SWAlertViewController.modulemap; sourceTree = "<group>"; };
+		C50A4F4F582EE6EC33B84BAC865271CC /* SWAlertViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SWAlertViewController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D21805D10BEBECF3A97E47A2ACA52545 /* CFAlertActionSheetTransitionGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFAlertActionSheetTransitionGestureRecognizer.swift; sourceTree = "<group>"; };
+		D26692DA754D75F887AAB90A3DBE0E9B /* CFAlertActionTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = CFAlertActionTableViewCell.xib; sourceTree = "<group>"; };
 		D3067EAFD5B0A06885968D137840DB70 /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
-		D745D9244A397E3CB1167CE033D81A2A /* Pods_SWAlertViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SWAlertViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8346F3BF461814DECB1E3A2F160D98E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D745D9244A397E3CB1167CE033D81A2A /* Pods_SWAlertViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SWAlertViewController_Tests.framework; path = "Pods-SWAlertViewController_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFF51A4348BBD10653F8FD391A56A76 /* Pods-SWAlertViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SWAlertViewController_Tests-dummy.m"; sourceTree = "<group>"; };
 		DE35F81C954881204729C569018D98C0 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
 		E0956940883830C651240E754E3ECC52 /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
+		E171053A90D8DD614DD19539E0CB9938 /* CFAlertBaseTransitionGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFAlertBaseTransitionGestureRecognizer.swift; sourceTree = "<group>"; };
 		E354F8FD537351F26F7949B4EBFA5101 /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
+		E5C722066D37A7DD64EEAC4FE8EF64F8 /* CFAlertViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CFAlertViewController.swift; path = SWAlertViewController/Classes/CFAlertViewController/CFAlertViewController.swift; sourceTree = "<group>"; };
 		E621F768263424D9C5C35D58513625CB /* FBSnapshotTestCase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-umbrella.h"; sourceTree = "<group>"; };
 		EA718A72E676291836EBB46B85242155 /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
+		ECB72AB75A77C106750BD058AFB6AC93 /* CFAlertAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CFAlertAction.swift; sourceTree = "<group>"; };
 		EF53D290F564A9B10CEF56C9DC2010F2 /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
 		F97373E668D08492725811C3FF306DEB /* Pods-SWAlertViewController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SWAlertViewController_Example-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		04307BAD9387FACF9D79CECF72AC579F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				262174DA25CBFAE8A551FC7F13718312 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		25AEA5F69937556A1B90BA8303A03DF8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,14 +179,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				06C8DDCB8C16C1BBB2789AFEA43AE508 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88A5585C1849FE00E356AD0960CABE6E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F3E0350E61C5C9EEEE6B37D855BEF89E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +196,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00813B3BBD9C2C2DB7BF1F6A100681DF /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				19BA696AAD782AADC9A28723AFDEB546 /* CFAlertPopupTransition.swift */,
+			);
+			name = Popup;
+			path = Popup;
+			sourceTree = "<group>";
+		};
+		1166D2C80BB605BBAC45E6BFF02C4F1F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5833D88661A7AED060ABF8620E6889D2 /* CFAlertBaseInteractiveTransition.swift */,
+				E171053A90D8DD614DD19539E0CB9938 /* CFAlertBaseTransitionGestureRecognizer.swift */,
+			);
+			name = Base;
+			path = Base;
+			sourceTree = "<group>";
+		};
+		21D39FCF2CFAF0C297090F7EB5BC9B8D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7044DBA36FAFF0BECCC88148B90BC49A /* SWAlertViewController.modulemap */,
+				11306FB0F608EB28CAB59C6B848FB50B /* SWAlertViewController.xcconfig */,
+				8B5FEFD68D0C899AFF7DEC5098E5AB91 /* SWAlertViewController-dummy.m */,
+				60E8D629046A09C8E052032F69268CB2 /* SWAlertViewController-Info.plist */,
+				24C33EE401536D8CF2B4DAF35AFC0B5E /* SWAlertViewController-prefix.pch */,
+				2368113CEF1FD4BB049214DEB1641509 /* SWAlertViewController-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SWAlertViewController";
+			sourceTree = "<group>";
+		};
+		3B183651F9EB943C5F57C9C0E38DC308 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				12E2A9C6E1655C4267FEC7854A7CF54A /* CFAlertActionTableViewCell.swift */,
+				D26692DA754D75F887AAB90A3DBE0E9B /* CFAlertActionTableViewCell.xib */,
+				A5ECF55EAE55AE18A37EED142A096BF5 /* CFAlertDoubleActionTableViewCell.swift */,
+				593181F0763A0171774F683BFA889E07 /* CFAlertDoubleActionTableViewCell.xib */,
+				1EDE05E1AD9E64038820276D37AE8313 /* CFAlertTitleSubtitleTableViewCell.swift */,
+				262489457DBA30311A8B5D54AF764250 /* CFAlertTitleSubtitleTableViewCell.xib */,
+			);
+			name = Cells;
+			path = SWAlertViewController/Classes/CFAlertViewController/Cells;
+			sourceTree = "<group>";
+		};
 		45E4BEB48F67ECE4946F86A2669DF19F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,122 +257,41 @@
 			path = "../Target Support Files/FBSnapshotTestCase";
 			sourceTree = "<group>";
 		};
-		52D1BF836F11A44FABA863C05F6A2322 /* Pod */ = {
+		552BFDEB5E88D99EBA8F6AE1DAAB67BD /* SWAlertViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D8346F3BF461814DECB1E3A2F160D98E /* LICENSE */,
-				74E463C3CCF079E9F91A17E6136970BD /* README.md */,
-				5E28C7781E73A210F95D5DBBCFC5AAAF /* SWAlertViewController.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		5C2ACDBB2328D6BE001D109A /* CFAlertViewController */ = {
-			isa = PBXGroup;
-			children = (
-				5C2ACDBC2328D6BE001D109A /* Cells */,
-				5C2ACDC12328D6BE001D109A /* CFAlertViewController.xib */,
-				5C2ACDC22328D6BE001D109A /* Subclass */,
-				5C2ACDC52328D6BE001D109A /* CFAlertViewController.swift */,
-				5C2ACDC62328D6BE001D109A /* Models */,
-				5C2ACDC82328D6BE001D109A /* Transitions */,
-			);
-			name = CFAlertViewController;
-			path = SWAlertViewController/Classes/CFAlertViewController;
-			sourceTree = "<group>";
-		};
-		5C2ACDBC2328D6BE001D109A /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				5C2ACDC02328D6BE001D109A /* CFAlertActionTableViewCell.swift */,
-				5C2ACDBD2328D6BE001D109A /* CFAlertActionTableViewCell.xib */,
-				5C2ACDBE2328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.swift */,
-				5C2ACDBF2328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.xib */,
-				5C2ACDE32328F2B6001D109A /* CFAlertDoubleActionTableViewCell.swift */,
-				5C2ACDE42328F2B6001D109A /* CFAlertDoubleActionTableViewCell.xib */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		5C2ACDC22328D6BE001D109A /* Subclass */ = {
-			isa = PBXGroup;
-			children = (
-				5C2ACDC32328D6BE001D109A /* CFPushButton */,
-			);
-			path = Subclass;
-			sourceTree = "<group>";
-		};
-		5C2ACDC32328D6BE001D109A /* CFPushButton */ = {
-			isa = PBXGroup;
-			children = (
-				5C2ACDC42328D6BE001D109A /* CFPushButton.swift */,
-			);
-			path = CFPushButton;
-			sourceTree = "<group>";
-		};
-		5C2ACDC62328D6BE001D109A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				5C2ACDC72328D6BE001D109A /* CFAlertAction.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		5C2ACDC82328D6BE001D109A /* Transitions */ = {
-			isa = PBXGroup;
-			children = (
-				5C2ACDC92328D6BE001D109A /* Popup */,
-				5C2ACDCB2328D6BE001D109A /* Action Sheet */,
-				5C2ACDCE2328D6BE001D109A /* Notification */,
-				5C2ACDD12328D6BE001D109A /* Base */,
-			);
-			path = Transitions;
-			sourceTree = "<group>";
-		};
-		5C2ACDC92328D6BE001D109A /* Popup */ = {
-			isa = PBXGroup;
-			children = (
-				5C2ACDCA2328D6BE001D109A /* CFAlertPopupTransition.swift */,
-			);
-			path = Popup;
-			sourceTree = "<group>";
-		};
-		5C2ACDCB2328D6BE001D109A /* Action Sheet */ = {
-			isa = PBXGroup;
-			children = (
-				5C2ACDCC2328D6BE001D109A /* CFAlertActionSheetInteractiveTransition.swift */,
-				5C2ACDCD2328D6BE001D109A /* CFAlertActionSheetTransitionGestureRecognizer.swift */,
-			);
-			path = "Action Sheet";
-			sourceTree = "<group>";
-		};
-		5C2ACDCE2328D6BE001D109A /* Notification */ = {
-			isa = PBXGroup;
-			children = (
-				5C2ACDCF2328D6BE001D109A /* CFAlertNotificationTransitionGestureRecognizer.swift */,
-				5C2ACDD02328D6BE001D109A /* CFAlertNotificationInteractiveTransition.swift */,
-			);
-			path = Notification;
-			sourceTree = "<group>";
-		};
-		5C2ACDD12328D6BE001D109A /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				5C2ACDD22328D6BE001D109A /* CFAlertBaseInteractiveTransition.swift */,
-				5C2ACDD32328D6BE001D109A /* CFAlertBaseTransitionGestureRecognizer.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		5E696CAF11306D468B5B88C95D343F25 /* SWAlertViewController */ = {
-			isa = PBXGroup;
-			children = (
-				5C2ACDBB2328D6BE001D109A /* CFAlertViewController */,
-				52D1BF836F11A44FABA863C05F6A2322 /* Pod */,
-				894403DA91B146A6E5F6992A4741C102 /* Support Files */,
+				E5C722066D37A7DD64EEAC4FE8EF64F8 /* CFAlertViewController.swift */,
+				784C94FDDECBA0FB43CAAB5D1FC11C49 /* CFAlertViewController.xib */,
+				3B183651F9EB943C5F57C9C0E38DC308 /* Cells */,
+				5C0093B3E4B6783C4115E6849DE36D20 /* Models */,
+				A5EC812984CDDEE8813BAC5A39C10E05 /* Pod */,
+				DAED67A47C16DE2501C4A39DAEBCE587 /* Subclass */,
+				21D39FCF2CFAF0C297090F7EB5BC9B8D /* Support Files */,
+				5BE513F9966CC640446E33E8AD893276 /* Transitions */,
 			);
 			name = SWAlertViewController;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		5BE513F9966CC640446E33E8AD893276 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				A1AA8CFE1E9D82D315A97DC0DEB3EA95 /* Action Sheet */,
+				1166D2C80BB605BBAC45E6BFF02C4F1F /* Base */,
+				89D5083ABFA7BC7FF6D0C634D446F158 /* Notification */,
+				00813B3BBD9C2C2DB7BF1F6A100681DF /* Popup */,
+			);
+			name = Transitions;
+			path = SWAlertViewController/Classes/CFAlertViewController/Transitions;
+			sourceTree = "<group>";
+		};
+		5C0093B3E4B6783C4115E6849DE36D20 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ECB72AB75A77C106750BD058AFB6AC93 /* CFAlertAction.swift */,
+			);
+			name = Models;
+			path = SWAlertViewController/Classes/CFAlertViewController/Models;
 			sourceTree = "<group>";
 		};
 		62B18AEB8B492613CD3B0932E79B60C8 /* Targets Support Files */ = {
@@ -335,6 +301,15 @@
 				B90CF2E1093506D571B48D8B24D53263 /* Pods-SWAlertViewController_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		697C2C8D145FB9544207B6B22770CA10 /* CFPushButton */ = {
+			isa = PBXGroup;
+			children = (
+				148E75E773A01AA04EBE4EB762FF9B44 /* CFPushButton.swift */,
+			);
+			name = CFPushButton;
+			path = CFPushButton;
 			sourceTree = "<group>";
 		};
 		7DE5752EED0A4C4A430975244947611A /* iOS */ = {
@@ -373,26 +348,14 @@
 			path = "Target Support Files/Pods-SWAlertViewController_Example";
 			sourceTree = "<group>";
 		};
-		894403DA91B146A6E5F6992A4741C102 /* Support Files */ = {
+		89D5083ABFA7BC7FF6D0C634D446F158 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				C4DF430F881DFD921A5072E2F4648262 /* SWAlertViewController.modulemap */,
-				B2ABDB6B56B37C37E1A96542E15303CA /* SWAlertViewController.xcconfig */,
-				206D218ADA14A1B7CB38A6E622DE3E2B /* SWAlertViewController-dummy.m */,
-				86F5F7B4E781BB8EC834A8CAC6C7619D /* SWAlertViewController-Info.plist */,
-				4E6D84F05BA5B4881D6BDDB8DBD3C2BC /* SWAlertViewController-prefix.pch */,
-				3ED746CDAA44A708F69B78A3A0111E0C /* SWAlertViewController-umbrella.h */,
+				3725601E66CC92B2BD4FCC7A6FA66614 /* CFAlertNotificationInteractiveTransition.swift */,
+				7C68D1CF7526EAD7ADDEFBC054FB9AC0 /* CFAlertNotificationTransitionGestureRecognizer.swift */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SWAlertViewController";
-			sourceTree = "<group>";
-		};
-		8AACF0ADF3ECE7BAFEE8A628DDDADCD6 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5E696CAF11306D468B5B88C95D343F25 /* SWAlertViewController */,
-			);
-			name = "Development Pods";
+			name = Notification;
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		92B9827D134822FECA2FBE88A0585CBA /* FBSnapshotTestCase */ = {
@@ -402,6 +365,7 @@
 				45E4BEB48F67ECE4946F86A2669DF19F /* Support Files */,
 				820C839EC049005CB82FAAF13AFDCB95 /* SwiftSupport */,
 			);
+			name = FBSnapshotTestCase;
 			path = FBSnapshotTestCase;
 			sourceTree = "<group>";
 		};
@@ -424,6 +388,34 @@
 				AA172EA1A198EEFBE0794EACF7993C02 /* UIImage+Snapshot.m */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		A1AA8CFE1E9D82D315A97DC0DEB3EA95 /* Action Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				42C20AEC831BB6588C836336D28897DD /* CFAlertActionSheetInteractiveTransition.swift */,
+				D21805D10BEBECF3A97E47A2ACA52545 /* CFAlertActionSheetTransitionGestureRecognizer.swift */,
+			);
+			name = "Action Sheet";
+			path = "Action Sheet";
+			sourceTree = "<group>";
+		};
+		A5EC812984CDDEE8813BAC5A39C10E05 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				BC91FE5610FF112CC31AB299DA9323F6 /* LICENSE */,
+				7D57BA7587DA83DF711D71B48F289E24 /* README.md */,
+				C50A4F4F582EE6EC33B84BAC865271CC /* SWAlertViewController.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		ACEDA2BFEA049E89B162A2D7DFA8D8B5 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				552BFDEB5E88D99EBA8F6AE1DAAB67BD /* SWAlertViewController */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		B90CF2E1093506D571B48D8B24D53263 /* Pods-SWAlertViewController_Tests */ = {
@@ -455,12 +447,21 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				8AACF0ADF3ECE7BAFEE8A628DDDADCD6 /* Development Pods */,
+				ACEDA2BFEA049E89B162A2D7DFA8D8B5 /* Development Pods */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
 				E81A37DBDE41E671312C56736544E2FA /* Pods */,
 				FBD9A99AD226F4D0F71548AD956A8D92 /* Products */,
 				62B18AEB8B492613CD3B0932E79B60C8 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		DAED67A47C16DE2501C4A39DAEBCE587 /* Subclass */ = {
+			isa = PBXGroup;
+			children = (
+				697C2C8D145FB9544207B6B22770CA10 /* CFPushButton */,
+			);
+			name = Subclass;
+			path = SWAlertViewController/Classes/CFAlertViewController/Subclass;
 			sourceTree = "<group>";
 		};
 		E81A37DBDE41E671312C56736544E2FA /* Pods */ = {
@@ -485,14 +486,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2D898BCB8ED772C0ACECDE40D4232470 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5479793503B6E46877C894197A3C06ED /* SWAlertViewController-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		384DE8A8021C5DA5E256BCFEC3D478A9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -505,6 +498,14 @@
 				F1AAAE00BB32B733B238E2B4E8424506 /* UIImage+Compare.h in Headers */,
 				D04AAC8B22E4A4DC4F39891C4E52F251 /* UIImage+Diff.h in Headers */,
 				B74CD6E6EBEA0B642776BCB37850415D /* UIImage+Snapshot.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5282AAFA87AAADAABB1014FFA61791D0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C18FE6D4396FD7F94115484EF3D02606 /* SWAlertViewController-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,12 +530,12 @@
 /* Begin PBXNativeTarget section */
 		3CC9B18ECBFB2D4CBEFA7F6D1840E92C /* SWAlertViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6915BCA9E430F77CC26F0BB93FABA8C8 /* Build configuration list for PBXNativeTarget "SWAlertViewController" */;
+			buildConfigurationList = 2287A6CE36AC26A8178EF46C4FE19F71 /* Build configuration list for PBXNativeTarget "SWAlertViewController" */;
 			buildPhases = (
-				2D898BCB8ED772C0ACECDE40D4232470 /* Headers */,
-				05C24BD7622F9FB589D10A2C269217A6 /* Sources */,
-				88A5585C1849FE00E356AD0960CABE6E /* Frameworks */,
-				DC67D94509E264FE9E38F3451F9F8757 /* Resources */,
+				5282AAFA87AAADAABB1014FFA61791D0 /* Headers */,
+				28D802C8ACF90D2706A3790622A2E8FC /* Sources */,
+				04307BAD9387FACF9D79CECF72AC579F /* Frameworks */,
+				BE98B391B3FE5F5121EFB5436555F873 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -636,21 +637,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C2ACDD62328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.xib in Resources */,
-				5C2ACDD42328D6BE001D109A /* CFAlertActionTableViewCell.xib in Resources */,
-				5C2ACDE62328F2B6001D109A /* CFAlertDoubleActionTableViewCell.xib in Resources */,
-				5C2ACDD82328D6BE001D109A /* CFAlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C97C02208424576A8C17C848352A6251 /* Resources */ = {
+		BE98B391B3FE5F5121EFB5436555F873 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC67D94509E264FE9E38F3451F9F8757 /* Resources */ = {
+		C97C02208424576A8C17C848352A6251 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -667,11 +664,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		05C24BD7622F9FB589D10A2C269217A6 /* Sources */ = {
+		28D802C8ACF90D2706A3790622A2E8FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7022394FE1CEE1EB2FF30B53D8C15CC9 /* SWAlertViewController-dummy.m in Sources */,
+				3EB0BFA0334AADA078FCC0A113EE29CE /* CFAlertAction.swift in Sources */,
+				58B67ECB59FA564E5EF2FA438B6CC385 /* CFAlertActionSheetInteractiveTransition.swift in Sources */,
+				533910FA8FB67A2244395CD5734F1BBF /* CFAlertActionSheetTransitionGestureRecognizer.swift in Sources */,
+				D546720F21749A7503C16A097C7FBF7E /* CFAlertActionTableViewCell.swift in Sources */,
+				33B9B8518496E5DC630944CC5FB44EB9 /* CFAlertActionTableViewCell.xib in Sources */,
+				7CC98F23066EA886832CEF75158392BD /* CFAlertBaseInteractiveTransition.swift in Sources */,
+				920224E349A20EA973E9A59FE2B8B8C0 /* CFAlertBaseTransitionGestureRecognizer.swift in Sources */,
+				4928AE0659C86797436A4B226C75F23F /* CFAlertDoubleActionTableViewCell.swift in Sources */,
+				3C357054808275C348D862B83B164FB7 /* CFAlertDoubleActionTableViewCell.xib in Sources */,
+				ABF81ABC8525D81FCF147B81E15A9C8D /* CFAlertNotificationInteractiveTransition.swift in Sources */,
+				B497EE4135D6E9E9B428E836CFD676F3 /* CFAlertNotificationTransitionGestureRecognizer.swift in Sources */,
+				B32D85F7464CA833AF9FC23D39D15DBE /* CFAlertPopupTransition.swift in Sources */,
+				6C15A2EFE47FA8F8FA86E99BDB23DB8A /* CFAlertTitleSubtitleTableViewCell.swift in Sources */,
+				391D41771B2F14FC4C622DB051624FCF /* CFAlertTitleSubtitleTableViewCell.xib in Sources */,
+				0AE57F1F4EB46524F46645EF3DBAF46C /* CFAlertViewController.swift in Sources */,
+				9EC40D6B3183EB3E3DF8ECEFF100AE75 /* CFAlertViewController.xib in Sources */,
+				F8A90414D92CF28220A7F4B1BFFE0A61 /* CFPushButton.swift in Sources */,
+				E691094E150326D741FB2C5969D54904 /* SWAlertViewController-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,25 +704,12 @@
 				6DBC8EB7532E931C2FBDA71D1E0B66A4 /* FBSnapshotTestCase-dummy.m in Sources */,
 				8CE3BF0ACE07EA42DD5DAC871BF4B767 /* FBSnapshotTestCase.m in Sources */,
 				E8AC509D18EBF21B1FEA909652A01108 /* FBSnapshotTestCasePlatform.m in Sources */,
-				5C2ACDDE2328D6BE001D109A /* CFAlertActionSheetTransitionGestureRecognizer.swift in Sources */,
-				5C2ACDDB2328D6BE001D109A /* CFAlertAction.swift in Sources */,
-				5C2ACDDC2328D6BE001D109A /* CFAlertPopupTransition.swift in Sources */,
 				88396E68DC05A379282F3B374F75F43C /* FBSnapshotTestController.m in Sources */,
-				5C2ACDDA2328D6BE001D109A /* CFAlertViewController.swift in Sources */,
 				9D65089019D558E5A9661F2DCAD20313 /* SwiftSupport.swift in Sources */,
 				11C410135C7E89353B480AC8DE0BFB77 /* UIApplication+StrictKeyWindow.m in Sources */,
-				5C2ACDE52328F2B6001D109A /* CFAlertDoubleActionTableViewCell.swift in Sources */,
-				5C2ACDE22328D6BE001D109A /* CFAlertBaseTransitionGestureRecognizer.swift in Sources */,
-				5C2ACDDD2328D6BE001D109A /* CFAlertActionSheetInteractiveTransition.swift in Sources */,
-				5C2ACDD92328D6BE001D109A /* CFPushButton.swift in Sources */,
 				2DCFF0CE0BD295F1D46D3247F36B192C /* UIImage+Compare.m in Sources */,
-				5C2ACDE02328D6BE001D109A /* CFAlertNotificationInteractiveTransition.swift in Sources */,
-				5C2ACDD72328D6BE001D109A /* CFAlertActionTableViewCell.swift in Sources */,
 				14AD81D52FAD9CF2C065C61FB00C3B4F /* UIImage+Diff.m in Sources */,
-				5C2ACDD52328D6BE001D109A /* CFAlertTitleSubtitleTableViewCell.swift in Sources */,
 				A525E29E0A8079B35B793D8A2B5FBDF2 /* UIImage+Snapshot.m in Sources */,
-				5C2ACDE12328D6BE001D109A /* CFAlertBaseInteractiveTransition.swift in Sources */,
-				5C2ACDDF2328D6BE001D109A /* CFAlertNotificationTransitionGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,37 +745,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1641AB473DE93CE7D553A2E307FE9A17 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2ABDB6B56B37C37E1A96542E15303CA /* SWAlertViewController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SWAlertViewController/SWAlertViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SWAlertViewController/SWAlertViewController-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SWAlertViewController/SWAlertViewController.modulemap";
-				PRODUCT_MODULE_NAME = SWAlertViewController;
-				PRODUCT_NAME = SWAlertViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		6981B49048575F8238B3C5B905C918E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 418E0471655A8CDB5EB2C290498D2FD3 /* FBSnapshotTestCase.xcconfig */;
@@ -791,7 +761,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase.modulemap";
 				PRODUCT_MODULE_NAME = FBSnapshotTestCase;
@@ -807,9 +777,9 @@
 			};
 			name = Release;
 		};
-		70BCF590A5079AC9765DE2501C2A5C2B /* Release */ = {
+		6CA24C7933F60E13E36D08AD97FFF9DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86BEAB4416F9D05585B3DBEE33AC2DE7 /* Pods-SWAlertViewController_Tests.release.xcconfig */;
+			baseConfigurationReference = 60FF67A6054DEFE18C39A033F0E36670 /* Pods-SWAlertViewController_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -821,12 +791,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SWAlertViewController_Tests/Pods-SWAlertViewController_Tests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SWAlertViewController_Example/Pods-SWAlertViewController_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SWAlertViewController_Tests/Pods-SWAlertViewController_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SWAlertViewController_Example/Pods-SWAlertViewController_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -841,7 +811,7 @@
 			};
 			name = Release;
 		};
-		B0087CB4594321EF41619F3181FE120E /* Release */ = {
+		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -894,13 +864,14 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */ = {
+		916E0404255105F480DC4950B7625F7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -964,9 +935,9 @@
 			};
 			name = Debug;
 		};
-		BDDFC9C3B9E7D8DA938BB63D4BA26224 /* Debug */ = {
+		BFCCCDED74277BD6FA6A1AB557F26417 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B71FBA73C57C246E44EC98DE1B84D93 /* Pods-SWAlertViewController_Example.debug.xcconfig */;
+			baseConfigurationReference = 86BEAB4416F9D05585B3DBEE33AC2DE7 /* Pods-SWAlertViewController_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -978,12 +949,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SWAlertViewController_Example/Pods-SWAlertViewController_Example-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SWAlertViewController_Tests/Pods-SWAlertViewController_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SWAlertViewController_Example/Pods-SWAlertViewController_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SWAlertViewController_Tests/Pods-SWAlertViewController_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -992,12 +963,76 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C6E74EE26587E50CF0B94CEE0362170F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11306FB0F608EB28CAB59C6B848FB50B /* SWAlertViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SWAlertViewController/SWAlertViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SWAlertViewController/SWAlertViewController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SWAlertViewController/SWAlertViewController.modulemap";
+				PRODUCT_MODULE_NAME = SWAlertViewController;
+				PRODUCT_NAME = SWAlertViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		D5F3A6B72F98A91DEF73CADE137F7B3A /* Debug */ = {
+		CCC1AEFAAA88375A3376399948DCCBAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11306FB0F608EB28CAB59C6B848FB50B /* SWAlertViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SWAlertViewController/SWAlertViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SWAlertViewController/SWAlertViewController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SWAlertViewController/SWAlertViewController.modulemap";
+				PRODUCT_MODULE_NAME = SWAlertViewController;
+				PRODUCT_NAME = SWAlertViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EA99A85457D18A5AAAA037BF20155C54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 90EE05AA157E510472584A40CB396D44 /* Pods-SWAlertViewController_Tests.debug.xcconfig */;
 			buildSettings = {
@@ -1030,9 +1065,40 @@
 			};
 			name = Debug;
 		};
-		D7E4E3BFE4B7AA3ADCC002C6346D0BE7 /* Release */ = {
+		EE252C6C51286892441EE171776C7E81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60FF67A6054DEFE18C39A033F0E36670 /* Pods-SWAlertViewController_Example.release.xcconfig */;
+			baseConfigurationReference = 418E0471655A8CDB5EB2C290498D2FD3 /* FBSnapshotTestCase.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase.modulemap";
+				PRODUCT_MODULE_NAME = FBSnapshotTestCase;
+				PRODUCT_NAME = FBSnapshotTestCase;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F8FF73D9CCA7AC1EDD250DAB02A0A90E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B71FBA73C57C246E44EC98DE1B84D93 /* Pods-SWAlertViewController_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1058,83 +1124,28 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		EE252C6C51286892441EE171776C7E81 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 418E0471655A8CDB5EB2C290498D2FD3 /* FBSnapshotTestCase.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase.modulemap";
-				PRODUCT_MODULE_NAME = FBSnapshotTestCase;
-				PRODUCT_NAME = FBSnapshotTestCase;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		F489710F5A7844D70FB6D21914014843 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2ABDB6B56B37C37E1A96542E15303CA /* SWAlertViewController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SWAlertViewController/SWAlertViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SWAlertViewController/SWAlertViewController-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SWAlertViewController/SWAlertViewController.modulemap";
-				PRODUCT_MODULE_NAME = SWAlertViewController;
-				PRODUCT_NAME = SWAlertViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2287A6CE36AC26A8178EF46C4FE19F71 /* Build configuration list for PBXNativeTarget "SWAlertViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6E74EE26587E50CF0B94CEE0362170F /* Debug */,
+				CCC1AEFAAA88375A3376399948DCCBAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */,
-				B0087CB4594321EF41619F3181FE120E /* Release */,
+				916E0404255105F480DC4950B7625F7A /* Debug */,
+				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1142,17 +1153,8 @@
 		57C6BE143D4CD6047BC102982AF0F037 /* Build configuration list for PBXNativeTarget "Pods-SWAlertViewController_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BDDFC9C3B9E7D8DA938BB63D4BA26224 /* Debug */,
-				D7E4E3BFE4B7AA3ADCC002C6346D0BE7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6915BCA9E430F77CC26F0BB93FABA8C8 /* Build configuration list for PBXNativeTarget "SWAlertViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1641AB473DE93CE7D553A2E307FE9A17 /* Debug */,
-				F489710F5A7844D70FB6D21914014843 /* Release */,
+				F8FF73D9CCA7AC1EDD250DAB02A0A90E /* Debug */,
+				6CA24C7933F60E13E36D08AD97FFF9DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1169,8 +1171,8 @@
 		BBA9C430732D5C0AC61F9CBC2BE57A7E /* Build configuration list for PBXNativeTarget "Pods-SWAlertViewController_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D5F3A6B72F98A91DEF73CADE137F7B3A /* Debug */,
-				70BCF590A5079AC9765DE2501C2A5C2B /* Release */,
+				EA99A85457D18A5AAAA037BF20155C54 /* Debug */,
+				BFCCCDED74277BD6FA6A1AB557F26417 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
