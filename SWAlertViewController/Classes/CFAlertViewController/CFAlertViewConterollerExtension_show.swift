@@ -36,6 +36,7 @@ public extension CFAlertViewController {
                                  actionsArrangement:CFAlertControllerActionsArrangement,
                                  headerView: UIView?,
                                  footerView: UIView?,
+                                 backgroundStyle:CFAlertControllerBackgroundStyle = .plain,
                                  presentAnimated: Bool = true,
                                  actions: CFAlertAction...,
                                  presentFrom viewController: UIViewController,
@@ -43,6 +44,7 @@ public extension CFAlertViewController {
                                  didDismissAlertHandler dismiss: CFAlertViewControllerDismissBlock?) -> (){
         
         let alert = CFAlertViewController.init(title: title, titleColor: titleColor, message: message, messageColor: messageColor, titleFont: titleFont, messageFont: messageFont, titleAndMessageSpace: titleAndMessageSpace, textAlignment: textAlignment, separationLineColor: separationLineColor, separationLineLeading: separationLineLeading, separationLineTrailing: separationLineTrailing, textContentTopMargin: textContentTopMargin, textContentBottomMargin: textContentBottomMargin, separationLineHeight: separationLineHeight, margin: margin, cornerRadius: cornerRadius, borderColor: borderColor, borderWidth: borderWidth, actionsLeading: actionsLeading, actionsTrailing: actionsTrailing, actionsTop: actionsTop, actionsBottom: actionsBottom, actionsSpace: actionsSpace, actionsHeight: actionsHeight, preferredStyle: preferredStyle, actionsArrangement: actionsArrangement, headerView: headerView, footerView: footerView, didDismissAlertHandler: dismiss)
+        alert.backgroundStyle = backgroundStyle
         actions.forEach { (action) in
             alert.addAction(action)
         }
