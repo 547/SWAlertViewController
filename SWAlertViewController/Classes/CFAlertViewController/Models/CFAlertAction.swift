@@ -46,14 +46,14 @@ open class CFAlertAction: NSObject, NSCopying {
     public class func action(title: String?,
                                    style: CFAlertActionStyle,
                                    alignment: CFAlertActionAlignment,
-                                   backgroundColor: UIColor?,
-                                   textColor: UIColor?,
-                                   textFont: UIFont?,
-                                   cornerRadius:CGFloat?,
-                                   borderColor:UIColor?,
-                                   borderWidth:CGFloat?,
+                                   backgroundColor: UIColor? = nil,
+                                   textColor: UIColor? = nil,
+                                   textFont: UIFont? = nil,
+                                   cornerRadius:CGFloat? = nil,
+                                   borderColor:UIColor? = nil,
+                                   borderWidth:CGFloat? = nil,
                                    contentEdgeInsets:UIEdgeInsets? = nil,
-                                   handler: CFAlertActionHandlerBlock?) -> CFAlertAction  {
+                                   handler: CFAlertActionHandlerBlock? = nil) -> CFAlertAction  {
         return CFAlertAction.init(title: title,
                                   style: style,
                                   alignment: alignment,
@@ -70,14 +70,14 @@ open class CFAlertAction: NSObject, NSCopying {
     public convenience init(title: String?,
                                   style: CFAlertActionStyle,
                                   alignment: CFAlertActionAlignment,
-                                  backgroundColor: UIColor?,
-                                  textColor: UIColor?,
-                                  textFont: UIFont?,
-                                  cornerRadius:CGFloat?,
-                                  borderColor:UIColor?,
-                                  borderWidth:CGFloat?,
+                                  backgroundColor: UIColor? = nil,
+                                  textColor: UIColor? = nil,
+                                  textFont: UIFont? = nil,
+                                  cornerRadius:CGFloat? = nil,
+                                  borderColor:UIColor? = nil,
+                                  borderWidth:CGFloat? = nil,
                                   contentEdgeInsets:UIEdgeInsets? = nil,
-                                  handler: CFAlertActionHandlerBlock?) {
+                                  handler: CFAlertActionHandlerBlock? = nil) {
         
         // Create New Instance Of Alert Controller
         self.init()
