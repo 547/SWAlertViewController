@@ -29,7 +29,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="leftActionButtonClicked:" destination="-2" eventType="touchUpInside" id="hmM-f5-yjO"/>
+                                    <action selector="leftActionButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Kae-RP-2Cm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzH-5b-w5B" customClass="CFPushButton" customModule="SWAlertViewController_Example" customModuleProvider="target">
@@ -40,7 +40,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="rightActionButtonClicked:" destination="-2" eventType="touchUpInside" id="Vzd-Ey-6Nw"/>
+                                    <action selector="rightActionButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="J87-0j-aZa"/>
                                 </connections>
                             </button>
                         </subviews>

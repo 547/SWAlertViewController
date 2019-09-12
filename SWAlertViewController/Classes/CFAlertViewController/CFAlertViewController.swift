@@ -938,10 +938,16 @@ open class CFAlertViewController: UIViewController    {
 
 
 extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFAlertActionTableViewCellDelegate {
+    // MARK: CFAlertActionTableViewCellDelegate
     public func alertActionCell(_ cell: UITableViewCell, didClickAction action: CFAlertAction?) {
-        
+        // Dimiss Self
+        dismissAlert(withAnimation: true, dismissReason: .onActionTap, completion: {() -> Void in
+            // Call Action Handler If Set
+            if let action = action, let actionHandler = action.handler {
+                actionHandler(action)
+            }
+        })
     }
-    
     
     // MARK: - UITableViewDataSource
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -1089,16 +1095,7 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
     }
     
     
-    // MARK: CFAlertActionTableViewCellDelegate
-    public func alertActionCell(_ cell: CFAlertActionTableViewCell, didClickAction action: CFAlertAction?) {
-        // Dimiss Self
-        dismissAlert(withAnimation: true, dismissReason: .onActionTap, completion: {() -> Void in
-            // Call Action Handler If Set
-            if let action = action, let actionHandler = action.handler {
-                actionHandler(action)
-            }
-        })
-    }
+    
 }
 
 

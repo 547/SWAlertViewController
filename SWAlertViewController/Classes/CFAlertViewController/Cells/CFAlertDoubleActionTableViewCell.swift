@@ -297,7 +297,7 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                 }
                 
                 // Set Title
-                rightActionButton?.setTitle(self.leftAction?.title, for: .normal)
+                rightActionButton?.setTitle(self.rightAction?.title, for: .normal)
             }
             else    {
                 // Set Blank Title
