@@ -41,7 +41,7 @@ public extension CFAlertViewController {
                                  backgroundStyle:CFAlertControllerBackgroundStyle = .plain,
                                  shouldDismissOnBackgroundTap: Bool = true,
                                  presentAnimated: Bool = true,
-                                 actions: CFAlertAction...,
+                                 actions: [CFAlertAction],
                                  presentFrom viewController: UIViewController,
                                  presentCompletion completion: (() -> Void)? = nil,
                                  didDismissAlertHandler dismiss: CFAlertViewControllerDismissBlock?) -> CFAlertViewController{
