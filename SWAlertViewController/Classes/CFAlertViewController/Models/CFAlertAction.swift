@@ -36,22 +36,23 @@ open class CFAlertAction: NSObject, NSCopying {
     @objc public var handler: CFAlertActionHandlerBlock?
     
     @objc public var textFont: UIFont?
-    @objc public var cornerRadius:Any? = nil
+    public var cornerRadius:CGFloat? = nil
     @objc public var borderColor:UIColor?
-    @objc public var borderWidth:Any? = nil
-    
+    public var borderWidth:CGFloat? = nil
+    public var contentEdgeInsets:UIEdgeInsets? = nil
     
     
     // MARK: - Initialisation Method
-    @objc public class func action(title: String?,
+    public class func action(title: String?,
                                    style: CFAlertActionStyle,
                                    alignment: CFAlertActionAlignment,
                                    backgroundColor: UIColor?,
                                    textColor: UIColor?,
                                    textFont: UIFont?,
-                                   cornerRadius:Any?,
+                                   cornerRadius:CGFloat?,
                                    borderColor:UIColor?,
-                                   borderWidth:Any?,
+                                   borderWidth:CGFloat?,
+                                   contentEdgeInsets:UIEdgeInsets? = nil,
                                    handler: CFAlertActionHandlerBlock?) -> CFAlertAction  {
         return CFAlertAction.init(title: title,
                                   style: style,
@@ -62,18 +63,20 @@ open class CFAlertAction: NSObject, NSCopying {
                                   cornerRadius: cornerRadius,
                                   borderColor: borderColor,
                                   borderWidth: borderWidth,
+                                  contentEdgeInsets: contentEdgeInsets,
                                   handler: handler)
     }
     
-    @objc public convenience init(title: String?,
+    public convenience init(title: String?,
                                   style: CFAlertActionStyle,
                                   alignment: CFAlertActionAlignment,
                                   backgroundColor: UIColor?,
                                   textColor: UIColor?,
                                   textFont: UIFont?,
-                                  cornerRadius:Any?,
+                                  cornerRadius:CGFloat?,
                                   borderColor:UIColor?,
-                                  borderWidth:Any?,
+                                  borderWidth:CGFloat?,
+                                  contentEdgeInsets:UIEdgeInsets? = nil,
                                   handler: CFAlertActionHandlerBlock?) {
         
         // Create New Instance Of Alert Controller
@@ -85,6 +88,11 @@ open class CFAlertAction: NSObject, NSCopying {
         self.alignment = alignment
         self.backgroundColor = backgroundColor
         self.textColor = textColor
+        self.textFont = textFont
+        self.cornerRadius = cornerRadius
+        self.borderWidth = borderWidth
+        self.borderColor = borderColor
+        self.contentEdgeInsets = contentEdgeInsets
         self.handler = handler
     }
     

@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="dGl-Zt-7oP" customClass="CFAlertTitleSubtitleTableViewCell" customModule="FBSnapshotTestCase" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="dGl-Zt-7oP" customClass="CFAlertTitleSubtitleTableViewCell" customModule="SWAlertViewController_Example" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dGl-Zt-7oP" id="7TX-v0-D43">
@@ -31,7 +31,7 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rAa-Pa-fld">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAa-Pa-fld">
                         <rect key="frame" x="0.0" y="86" width="320" height="0.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -48,10 +48,9 @@
                     <constraint firstItem="7tN-9S-3pI" firstAttribute="top" secondItem="c2H-hb-4JF" secondAttribute="bottom" priority="900" constant="5" id="M4O-kK-wiQ"/>
                     <constraint firstItem="7tN-9S-3pI" firstAttribute="top" secondItem="7TX-v0-D43" secondAttribute="top" constant="20" id="N7e-Ej-j3L"/>
                     <constraint firstAttribute="trailing" secondItem="c2H-hb-4JF" secondAttribute="trailing" constant="20" id="Re3-Qa-vge"/>
-                    <constraint firstItem="rAa-Pa-fld" firstAttribute="top" secondItem="7tN-9S-3pI" secondAttribute="bottom" priority="999" constant="20" id="SSA-gb-LJz"/>
                     <constraint firstItem="rAa-Pa-fld" firstAttribute="leading" secondItem="7TX-v0-D43" secondAttribute="leading" priority="999" id="Sha-Va-dQu"/>
                     <constraint firstAttribute="bottom" secondItem="7tN-9S-3pI" secondAttribute="bottom" constant="20" id="bcr-vb-hGq"/>
-                    <constraint firstAttribute="bottom" secondItem="rAa-Pa-fld" secondAttribute="bottom" priority="999" id="gYx-1q-gCh"/>
+                    <constraint firstAttribute="bottom" secondItem="rAa-Pa-fld" secondAttribute="bottom" id="gYx-1q-gCh"/>
                     <constraint firstItem="c2H-hb-4JF" firstAttribute="top" secondItem="7TX-v0-D43" secondAttribute="top" constant="20" id="lLx-fy-yUC"/>
                     <constraint firstItem="c2H-hb-4JF" firstAttribute="leading" secondItem="7TX-v0-D43" secondAttribute="leading" constant="20" id="xSR-q6-tNK"/>
                 </constraints>
@@ -69,7 +68,6 @@
                 <outlet property="bottonLineBottomConstraint" destination="gYx-1q-gCh" id="fFW-B6-Taf"/>
                 <outlet property="bottonLineHeightConstraint" destination="S8c-9k-TLW" id="TxI-ha-f5U"/>
                 <outlet property="bottonLineLeadingSpaceConstraint" destination="Sha-Va-dQu" id="wXg-e0-lji"/>
-                <outlet property="bottonLineTopConstraint" destination="SSA-gb-LJz" id="tNj-Rx-iNO"/>
                 <outlet property="bottonLineTrailingSpaceConstraint" destination="2xq-7l-T1n" id="Wn4-c2-xfj"/>
                 <outlet property="subtitleLabel" destination="7tN-9S-3pI" id="JFB-mJ-rIm"/>
                 <outlet property="subtitleLabelBottomConstraint" destination="bcr-vb-hGq" id="2QU-Sy-vdq"/>

@@ -1,6 +1,0 @@
-framework module SWAlertViewController {
-  umbrella header "SWAlertViewController-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -51,8 +51,8 @@ open class CFAlertViewController: UIViewController    {
     // MARK: - Variables
     // MARK: Public
     public internal(set) var textAlignment = NSTextAlignment(rawValue: 0)
-    public internal(set) var margin:Any? = nil
-    public internal(set) var actionsArrangement = CFAlertControllerActionsArrangement.horizontal
+    public internal(set) var margin:CGFloat? = nil
+    public internal(set) var actionsArrangement = CFAlertControllerActionsArrangement.vertical
     public internal(set) var preferredStyle = CFAlertControllerStyle(rawValue: 0)    {
         didSet  {
             DispatchQueue.main.async {
@@ -120,7 +120,7 @@ open class CFAlertViewController: UIViewController    {
                     self.tableViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 751)
                     self.tableViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 751)
                 }
-                if let margin = self.margin as? CGFloat {
+                if let margin = self.margin {
                     self.containerViewLeadingConstraint?.constant = margin
                     self.containerViewTrailingConstraint?.constant = margin
                 }
@@ -208,8 +208,16 @@ open class CFAlertViewController: UIViewController    {
     internal var separationLineColor:UIColor? = nil
     internal var separationLineLeading:CGFloat? = nil
     internal var separationLineTrailing:CGFloat? = nil
-    internal var separationLineTop:CGFloat? = nil
+    internal var textContentTopMargin:CGFloat? = nil
+    internal var textContentBottomMargin:CGFloat? = nil
     internal var separationLineHeight:CGFloat? = nil
+    
+    internal var actionsLeading:CGFloat? = nil
+    internal var actionsTrailing:CGFloat? = nil
+    internal var actionsTop:CGFloat? = nil
+    internal var actionsBottom:CGFloat? = nil
+    internal var actionsSpace:CGFloat? = nil
+    internal var actionsHeight:CGFloat? = nil
     
     internal var actionList = [CFAlertAction]()
     internal var dismissHandler: CFAlertViewControllerDismissBlock?
@@ -251,21 +259,28 @@ open class CFAlertViewController: UIViewController    {
     
     
     // MARK: - Initialisation Methods
-    @objc public class func alertController(title: String?,
+    public class func alertController(title: String?,
                                             message: String?,
                                             titleFont: UIFont?,
                                             messageFont:UIFont?,
-                                            titleAndMessageSpace:Any?,
+                                            titleAndMessageSpace:CGFloat?,
                                             textAlignment: NSTextAlignment,
                                             separationLineColor:UIColor? = nil,
-                                            separationLineLeading:Any? = nil,
-                                            separationLineTrailing:Any? = nil,
-                                            separationLineTop:Any? = nil,
-                                            separationLineHeight:Any? = nil,
-                                            margin:Any?,
-                                            cornerRadius:Any?,
+                                            separationLineLeading:CGFloat? = nil,
+                                            separationLineTrailing:CGFloat? = nil,
+                                            textContentTopMargin:CGFloat? = nil,
+                                            textContentBottomMargin:CGFloat? = nil,
+                                            separationLineHeight:CGFloat? = nil,
+                                            margin:CGFloat?,
+                                            cornerRadius:CGFloat?,
                                             borderColor:UIColor?,
-                                            borderWidth:Any?,
+                                            borderWidth:CGFloat?,
+                                            actionsLeading:CGFloat? = nil,
+                                            actionsTrailing:CGFloat? = nil,
+                                            actionsTop:CGFloat? = nil,
+                                            actionsBottom:CGFloat? = nil,
+                                            actionsSpace:CGFloat? = nil,
+                                            actionsHeight:CGFloat? = nil,
                                             preferredStyle: CFAlertControllerStyle,
                                             actionsArrangement:CFAlertControllerActionsArrangement,
                                             didDismissAlertHandler dismiss: CFAlertViewControllerDismissBlock?) -> CFAlertViewController {
@@ -281,12 +296,19 @@ open class CFAlertViewController: UIViewController    {
                                                      separationLineColor:separationLineColor,
                                                      separationLineLeading:separationLineLeading,
                                                      separationLineTrailing:separationLineTrailing,
-                                                     separationLineTop:separationLineTop,
+                                                     textContentTopMargin:textContentTopMargin,
+                                                     textContentBottomMargin:textContentBottomMargin,
                                                      separationLineHeight:separationLineHeight,
                                                      margin: margin,
                                                      cornerRadius:cornerRadius,
                                                      borderColor:borderColor,
                                                      borderWidth:borderWidth,
+                                                     actionsLeading:actionsLeading,
+                                                     actionsTrailing:actionsTrailing,
+                                                     actionsTop:actionsTop,
+                                                     actionsBottom:actionsBottom,
+                                                     actionsSpace:actionsSpace,
+                                                     actionsHeight:actionsHeight,
                                                      preferredStyle: preferredStyle,
                                                      actionsArrangement: actionsArrangement,
                                                      headerView: nil,
@@ -294,23 +316,30 @@ open class CFAlertViewController: UIViewController    {
                                                      didDismissAlertHandler: dismiss)
     }
     
-    @objc public class func alertController(title: String?,
+    public class func alertController(title: String?,
                                             titleColor: UIColor?,
                                             message: String?,
                                             messageColor: UIColor?,
                                             titleFont: UIFont?,
                                             messageFont:UIFont?,
-                                            titleAndMessageSpace:Any?,
+                                            titleAndMessageSpace:CGFloat?,
                                             textAlignment: NSTextAlignment,
                                             separationLineColor:UIColor? = nil,
-                                            separationLineLeading:Any? = nil,
-                                            separationLineTrailing:Any? = nil,
-                                            separationLineTop:Any? = nil,
-                                            separationLineHeight:Any? = nil,
-                                            margin:Any?,
-                                            cornerRadius:Any?,
+                                            separationLineLeading:CGFloat? = nil,
+                                            separationLineTrailing:CGFloat? = nil,
+                                            textContentTopMargin:CGFloat? = nil,
+                                            textContentBottomMargin:CGFloat? = nil,
+                                            separationLineHeight:CGFloat? = nil,
+                                            margin:CGFloat?,
+                                            cornerRadius:CGFloat?,
                                             borderColor:UIColor?,
-                                            borderWidth:Any?,
+                                            borderWidth:CGFloat?,
+                                            actionsLeading:CGFloat? = nil,
+                                            actionsTrailing:CGFloat? = nil,
+                                            actionsTop:CGFloat? = nil,
+                                            actionsBottom:CGFloat? = nil,
+                                            actionsSpace:CGFloat? = nil,
+                                            actionsHeight:CGFloat? = nil,
                                             preferredStyle: CFAlertControllerStyle,
                                             actionsArrangement:CFAlertControllerActionsArrangement,
                                             headerView: UIView?,
@@ -329,12 +358,19 @@ open class CFAlertViewController: UIViewController    {
                                           separationLineColor:separationLineColor,
                                           separationLineLeading:separationLineLeading,
                                           separationLineTrailing:separationLineTrailing,
-                                          separationLineTop:separationLineTop,
+                                          textContentTopMargin:textContentTopMargin,
+                                          textContentBottomMargin:textContentBottomMargin,
                                           separationLineHeight:separationLineHeight,
                                           margin: margin,
                                           cornerRadius:cornerRadius,
                                           borderColor:borderColor,
                                           borderWidth:borderWidth,
+                                          actionsLeading:actionsLeading,
+                                          actionsTrailing:actionsTrailing,
+                                          actionsTop:actionsTop,
+                                          actionsBottom:actionsBottom,
+                                          actionsSpace:actionsSpace,
+                                          actionsHeight:actionsHeight,
                                           preferredStyle: preferredStyle,
                                           actionsArrangement: actionsArrangement,
                                           headerView: headerView,
@@ -342,21 +378,28 @@ open class CFAlertViewController: UIViewController    {
                                           didDismissAlertHandler: dismiss)
     }
     
-    @objc public convenience init(title: String?,
+    public convenience init(title: String?,
                                   message: String?,
                                   titleFont: UIFont?,
                                   messageFont:UIFont?,
-                                  titleAndMessageSpace:Any?,
+                                  titleAndMessageSpace:CGFloat?,
                                   textAlignment: NSTextAlignment,
                                   separationLineColor:UIColor? = nil,
-                                  separationLineLeading:Any? = nil,
-                                  separationLineTrailing:Any? = nil,
-                                  separationLineTop:Any? = nil,
-                                  separationLineHeight:Any? = nil,
-                                  margin:Any?,
-                                  cornerRadius:Any?,
+                                  separationLineLeading:CGFloat? = nil,
+                                  separationLineTrailing:CGFloat? = nil,
+                                  textContentTopMargin:CGFloat? = nil,
+                                  textContentBottomMargin:CGFloat? = nil,
+                                  separationLineHeight:CGFloat? = nil,
+                                  margin:CGFloat?,
+                                  cornerRadius:CGFloat?,
                                   borderColor:UIColor?,
-                                  borderWidth:Any?,
+                                  borderWidth:CGFloat?,
+                                  actionsLeading:CGFloat? = nil,
+                                  actionsTrailing:CGFloat? = nil,
+                                  actionsTop:CGFloat? = nil,
+                                  actionsBottom:CGFloat? = nil,
+                                  actionsSpace:CGFloat? = nil,
+                                  actionsHeight:CGFloat? = nil,
                                   preferredStyle: CFAlertControllerStyle,
                                   actionsArrangement:CFAlertControllerActionsArrangement,
                                   didDismissAlertHandler dismiss: CFAlertViewControllerDismissBlock?) {
@@ -373,12 +416,19 @@ open class CFAlertViewController: UIViewController    {
                   separationLineColor:separationLineColor,
                   separationLineLeading:separationLineLeading,
                   separationLineTrailing:separationLineTrailing,
-                  separationLineTop:separationLineTop,
+                  textContentTopMargin:textContentTopMargin,
+                  textContentBottomMargin:textContentBottomMargin,
                   separationLineHeight:separationLineHeight,
                   margin: margin,
                   cornerRadius:cornerRadius,
                   borderColor:borderColor,
                   borderWidth:borderWidth,
+                  actionsLeading:actionsLeading,
+                  actionsTrailing:actionsTrailing,
+                  actionsTop:actionsTop,
+                  actionsBottom:actionsBottom,
+                  actionsSpace:actionsSpace,
+                  actionsHeight:actionsHeight,
                   preferredStyle: preferredStyle,
                   actionsArrangement: actionsArrangement,
                   headerView: nil,
@@ -386,23 +436,30 @@ open class CFAlertViewController: UIViewController    {
                   didDismissAlertHandler: dismiss)
     }
     
-    @objc public convenience init(title: String?,
+    public convenience init(title: String?,
                                   titleColor: UIColor?,
                                   message: String?,
                                   messageColor: UIColor?,
                                   titleFont: UIFont?,
                                   messageFont:UIFont?,
-                                  titleAndMessageSpace:Any?,
+                                  titleAndMessageSpace:CGFloat?,
                                   textAlignment: NSTextAlignment,
                                   separationLineColor:UIColor? = nil,
-                                  separationLineLeading:Any? = nil,
-                                  separationLineTrailing:Any? = nil,
-                                  separationLineTop:Any? = nil,
-                                  separationLineHeight:Any? = nil,
-                                  margin:Any?,
-                                  cornerRadius:Any?,
+                                  separationLineLeading:CGFloat? = nil,
+                                  separationLineTrailing:CGFloat? = nil,
+                                  textContentTopMargin:CGFloat? = nil,
+                                  textContentBottomMargin:CGFloat? = nil,
+                                  separationLineHeight:CGFloat? = nil,
+                                  margin:CGFloat?,
+                                  cornerRadius:CGFloat?,
                                   borderColor:UIColor?,
-                                  borderWidth:Any?,
+                                  borderWidth:CGFloat?,
+                                  actionsLeading:CGFloat? = nil,
+                                  actionsTrailing:CGFloat? = nil,
+                                  actionsTop:CGFloat? = nil,
+                                  actionsBottom:CGFloat? = nil,
+                                  actionsSpace:CGFloat? = nil,
+                                  actionsHeight:CGFloat? = nil,
                                   preferredStyle: CFAlertControllerStyle,
                                   actionsArrangement:CFAlertControllerActionsArrangement,
                                   headerView: UIView?,
@@ -435,21 +492,61 @@ open class CFAlertViewController: UIViewController    {
         if let messageFont = messageFont {
             self.messageFont = messageFont
         }
-        if let titleAndMessageSpace = titleAndMessageSpace as? CGFloat {
+        if let titleAndMessageSpace = titleAndMessageSpace {
             self.titleAndMessageSpace = titleAndMessageSpace
         }
         if let margin = margin {
             self.margin = margin
         }
-        if let cornerRadius = cornerRadius as? CGFloat {
+        if let cornerRadius = cornerRadius {
             self.cornerRadius = cornerRadius
         }
         if let borderColor = borderColor {
             self.borderColor = borderColor
         }
-        if let borderWidth = borderWidth as? CGFloat {
+        if let borderWidth = borderWidth {
             self.borderWidth = borderWidth
         }
+        
+        if let separationLineColor = separationLineColor {
+            self.separationLineColor = separationLineColor
+        }
+        if let separationLineLeading = separationLineLeading {
+            self.separationLineLeading = separationLineLeading
+        }
+        if let separationLineTrailing = separationLineTrailing {
+            self.separationLineTrailing = separationLineTrailing
+        }
+        if let textContentTopMargin = textContentTopMargin {
+            self.textContentTopMargin = textContentTopMargin
+        }
+        if let textContentBottomMargin = textContentBottomMargin {
+            self.textContentBottomMargin = textContentBottomMargin
+        }
+        if let separationLineHeight = separationLineHeight {
+            self.separationLineHeight = separationLineHeight
+        }
+        
+        
+        if let actionsLeading = actionsLeading {
+            self.actionsLeading = actionsLeading
+        }
+        if let actionsTrailing = actionsTrailing {
+            self.actionsTrailing = actionsTrailing
+        }
+        if let actionsTop = actionsTop {
+            self.actionsTop = actionsTop
+        }
+        if let actionsBottom = actionsBottom {
+            self.actionsBottom = actionsBottom
+        }
+        if let actionsSpace = actionsSpace {
+            self.actionsSpace = actionsSpace
+        }
+        if let actionsHeight = actionsHeight {
+            self.actionsHeight = actionsHeight
+        }
+        
         self.actionsArrangement = actionsArrangement
         
         self.textAlignment = textAlignment
@@ -505,6 +602,8 @@ open class CFAlertViewController: UIViewController    {
         // Register Cells For Table
         let actionCellNib = UINib(nibName: CFAlertActionTableViewCell.identifier(), bundle: Bundle(for: CFAlertActionTableViewCell.self))
         tableView?.register(actionCellNib, forCellReuseIdentifier: CFAlertActionTableViewCell.identifier())
+        let doubelActionCellNib = UINib(nibName: CFAlertDoubleActionTableViewCell.identifier(), bundle: Bundle(for: CFAlertDoubleActionTableViewCell.self))
+        tableView?.register(doubelActionCellNib, forCellReuseIdentifier: CFAlertDoubleActionTableViewCell.identifier())
         let titleSubtitleCellNib = UINib(nibName: CFAlertTitleSubtitleTableViewCell.identifier(), bundle: Bundle(for: CFAlertTitleSubtitleTableViewCell.self))
         tableView?.register(titleSubtitleCellNib, forCellReuseIdentifier: CFAlertTitleSubtitleTableViewCell.identifier())
         
@@ -862,6 +961,9 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
             }
             
         case 1:
+            if actionsArrangement == .horizontal, (self.actions?.count ?? 0) >= 2 {
+                return 1
+            }
             return self.actionList.count
             
         default:
@@ -884,17 +986,19 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
             // Set Content
             titleSubtitleCell?.setTitle(titleString, titleColor: titleColor, titleFont: titleFont, subtitle: messageString, subtitleColor: messageColor, subtitleFont: messageFont, bottomLineColor: separationLineColor, alignment: textAlignment!)
             // Set Content Margin
-            titleSubtitleCell?.contentTopMargin = 20.0
+            titleSubtitleCell?.contentTopMargin = self.textContentTopMargin ?? 20.0
+            
             titleSubtitleCell?.titlesSpace = titleAndMessageSpace ?? 5
-            titleSubtitleCell?.bottonLineTop = separationLineTop ?? 20
+            
+            
             titleSubtitleCell?.bottonLineLeadingSpace = separationLineLeading ?? 0
             titleSubtitleCell?.bottonLineTrailing = separationLineTrailing ?? 0
             titleSubtitleCell?.bottonLineHeight = separationLineHeight ?? 0.5
             if self.actionList.count <= 0 {
-                titleSubtitleCell?.contentBottomMargin = 20.0
+                titleSubtitleCell?.contentBottomMargin = self.textContentBottomMargin ?? 20.0
             }
             else {
-                titleSubtitleCell?.contentBottomMargin = 0.0
+                titleSubtitleCell?.contentBottomMargin = self.textContentBottomMargin ??  0.0
             }
             
         case 1:
@@ -906,18 +1010,24 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
                 actionCell?.delegate = self
                 // Set Action
                 actionCell?.leftAction = self.actionList[0]
-                actionCell?.leftAction = self.actionList[1]
+                actionCell?.rightAction = self.actionList[1]
                 // Set Top Margin For First Action
                 if let titleString = titleString, let messageString = messageString, (!titleString.isEmpty && !messageString.isEmpty)   {
-                    actionCell?.actionButtonsTopMargin = 12.0
+                    actionCell?.actionButtonsTopMargin = self.actionsTop ?? 12.0
                 }else {
-                    actionCell?.actionButtonsTopMargin = 20.0
+                    actionCell?.actionButtonsTopMargin = self.actionsTop ?? 20.0
                 }
                 // Set Bottom Margin For Last Action
                 if indexPath.row > 0    {
-                    actionCell?.actionButtonsTopMargin = 0.0
+                    actionCell?.actionButtonsTopMargin = self.actionsTop ?? 0.0
                 }
-                actionCell?.actionButtonsBottomMargin = 20.0
+                actionCell?.actionButtonsBottomMargin = self.actionsBottom ?? 20.0
+                
+
+                actionCell?.actionButtonsLeftMargin = self.actionsLeading ?? 20
+                actionCell?.actionButtonsRightMargin = self.actionsTrailing ?? 20
+                actionCell?.actionButtonsSpace = self.actionsSpace ?? 18
+                actionCell?.actionButtonsHeight = self.actionsHeight ?? 49.5
             }else {
                 // Get Action Cell Instance
                 cell = tableView.dequeueReusableCell(withIdentifier: CFAlertActionTableViewCell.identifier())
@@ -929,25 +1039,30 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
                 // Set Top Margin For First Action
                 if indexPath.row == 0 {
                     if let titleString = titleString, let messageString = messageString, (!titleString.isEmpty && !messageString.isEmpty)   {
-                        actionCell?.actionButtonTopMargin = 12.0
+                        actionCell?.actionButtonTopMargin = self.actionsTop ?? 12.0
                     }
                     else {
-                        actionCell?.actionButtonTopMargin = 20.0
+                        actionCell?.actionButtonTopMargin = self.actionsTop ?? 20.0
                     }
                 }
                 else    {
-                    actionCell?.actionButtonTopMargin = 0.0
+                    actionCell?.actionButtonTopMargin = self.actionsTop ?? 0.0
                 }
                 // Set Bottom Margin For Last Action
                 if indexPath.row == self.actionList.count - 1 {
                     if indexPath.row > 0    {
-                        actionCell?.actionButtonTopMargin = 0.0
+                        actionCell?.actionButtonTopMargin = self.actionsTop ?? 0.0
                     }
-                    actionCell?.actionButtonBottomMargin = 20.0
+                    actionCell?.actionButtonBottomMargin = self.actionsBottom ?? 20.0
                 }
                 else {
-                    actionCell?.actionButtonBottomMargin = 10.0
+                    actionCell?.actionButtonBottomMargin = self.actionsSpace ?? 10.0
                 }
+                
+                
+                actionCell?.actionButtonLeftMargin = self.actionsLeading ?? 20
+                actionCell?.actionButtonRightMargin = self.actionsTrailing ?? 20
+                actionCell?.actionButtonHeight = self.actionsHeight ?? 49.5
             }
             
             

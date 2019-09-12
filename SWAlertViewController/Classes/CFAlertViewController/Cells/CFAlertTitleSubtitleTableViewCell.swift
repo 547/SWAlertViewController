@@ -56,8 +56,8 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
     public var bottonLineTop: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            bottonLineTopConstraint?.constant = bottonLineTop
-            layoutIfNeeded()
+//            bottonLineTopConstraint?.constant = bottonLineTop
+//            layoutIfNeeded()
         }
     }
     public var bottonLineLeadingSpace: CGFloat = 0.0 {
@@ -101,7 +101,7 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
     @IBOutlet private weak var subtitleLabelBottomConstraint: NSLayoutConstraint?
     
     
-    @IBOutlet private weak var bottonLineTopConstraint: NSLayoutConstraint?
+//    @IBOutlet private weak var bottonLineTopConstraint: NSLayoutConstraint?
     @IBOutlet private weak var bottonLineLeadingSpaceConstraint: NSLayoutConstraint?
     @IBOutlet private weak var bottonLineTrailingSpaceConstraint: NSLayoutConstraint?
     @IBOutlet private weak var bottonLineBottomConstraint: NSLayoutConstraint?

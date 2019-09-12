@@ -33,7 +33,7 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
     // MARK: - Variables
     // MARK: Public
     public static func identifier() -> String    {
-        return String(describing: CFAlertActionTableViewCell.self)
+        return String(describing: CFAlertDoubleActionTableViewCell.self)
     }
     public weak var delegate: CFAlertActionTableViewCellDelegate?
     public var actionButtonsTopMargin: CGFloat = 0.0 {
@@ -50,6 +50,37 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
             layoutIfNeeded()
         }
     }
+    
+    public var actionButtonsLeftMargin: CGFloat = 0.0 {
+        didSet {
+            // Update Constraint
+            actionButtonsLeadingConstraint?.constant = actionButtonsLeftMargin
+            layoutIfNeeded()
+        }
+    }
+    public var actionButtonsRightMargin: CGFloat = 0.0 {
+        didSet {
+            // Update Constraint
+            actionButtonsTrailingConstraint?.constant = actionButtonsRightMargin
+            layoutIfNeeded()
+        }
+    }
+    public var actionButtonsSpace: CGFloat = 0.0 {
+        didSet {
+            // Update Constraint
+            actionButtonsSpaceConstraint?.constant = actionButtonsSpace
+            layoutIfNeeded()
+        }
+    }
+    public var actionButtonsHeight: CGFloat = 0.0 {
+        didSet {
+            // Update Constraint
+            actionButtonsHeightConstraint?.constant = actionButtonsHeight
+            layoutIfNeeded()
+        }
+    }
+    
+    
     public var leftAction: CFAlertAction? {
         didSet {
             
@@ -59,8 +90,8 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                 var actionBackgroundColor: UIColor? = action.backgroundColor
                 var actionTextColor: UIColor? = action.textColor
                 let textFont = action.textFont
-                let cornerRadius = action.cornerRadius as? CGFloat
-                let borderWidth = action.borderWidth as? CGFloat
+                let cornerRadius = action.cornerRadius
+                let borderWidth = action.borderWidth
                 let borderColor = action.borderColor
                 
                 switch action.style {
@@ -126,7 +157,7 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     actionButtonsCenterXConstraint?.isActive = false
                     actionButtonsTrailingConstraint?.priority = UILayoutPriority(rawValue: 751.0)
                     // Set Content Edge Inset
-                    leftActionButton?.contentEdgeInsets = UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
+                    leftActionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
                     
                 case .left:
                     // Left Align
@@ -134,7 +165,7 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     actionButtonsCenterXConstraint?.isActive = false
                     actionButtonsTrailingConstraint?.priority = UILayoutPriority(rawValue: 749.0)
                     // Set Content Edge Inset
-                    leftActionButton?.contentEdgeInsets = UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
+                    leftActionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
                     
                 case .center:
                     // Center Align
@@ -142,7 +173,7 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     actionButtonsCenterXConstraint?.isActive = true
                     actionButtonsTrailingConstraint?.priority = UILayoutPriority(rawValue: 750.0)
                     // Set Content Edge Inset
-                    leftActionButton?.contentEdgeInsets = UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
+                    leftActionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
                     
                 default:
                     // Justified Align
@@ -150,7 +181,7 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     actionButtonsCenterXConstraint?.isActive = false
                     actionButtonsTrailingConstraint?.priority = UILayoutPriority(rawValue: 751.0)
                     // Set Content Edge Inset
-                    leftActionButton?.contentEdgeInsets = UIEdgeInsets.init(top: 15.0, left: 20.0, bottom: 15.0, right: 20.0)
+                    leftActionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 15.0, left: 20.0, bottom: 15.0, right: 20.0)
                 }
                 
                 // Set Title
@@ -171,8 +202,8 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                 var actionBackgroundColor: UIColor? = action.backgroundColor
                 var actionTextColor: UIColor? = action.textColor
                 let textFont = action.textFont
-                let cornerRadius = action.cornerRadius as? CGFloat
-                let borderWidth = action.borderWidth as? CGFloat
+                let cornerRadius = action.cornerRadius
+                let borderWidth = action.borderWidth
                 let borderColor = action.borderColor
                 
                 switch action.style {
@@ -238,7 +269,7 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     actionButtonsCenterXConstraint?.isActive = false
                     actionButtonsTrailingConstraint?.priority = UILayoutPriority(rawValue: 751.0)
                     // Set Content Edge Inset
-                    rightActionButton?.contentEdgeInsets = UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
+                    rightActionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
                     
                 case .left:
                     // Left Align
@@ -246,7 +277,7 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     actionButtonsCenterXConstraint?.isActive = false
                     actionButtonsTrailingConstraint?.priority = UILayoutPriority(rawValue: 749.0)
                     // Set Content Edge Inset
-                    rightActionButton?.contentEdgeInsets = UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
+                    rightActionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
                     
                 case .center:
                     // Center Align
@@ -254,7 +285,7 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     actionButtonsCenterXConstraint?.isActive = true
                     actionButtonsTrailingConstraint?.priority = UILayoutPriority(rawValue: 750.0)
                     // Set Content Edge Inset
-                    rightActionButton?.contentEdgeInsets = UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
+                    rightActionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
                     
                 default:
                     // Justified Align
@@ -262,7 +293,7 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     actionButtonsCenterXConstraint?.isActive = false
                     actionButtonsTrailingConstraint?.priority = UILayoutPriority(rawValue: 751.0)
                     // Set Content Edge Inset
-                    rightActionButton?.contentEdgeInsets = UIEdgeInsets.init(top: 15.0, left: 20.0, bottom: 15.0, right: 20.0)
+                    rightActionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 15.0, left: 20.0, bottom: 15.0, right: 20.0)
                 }
                 
                 // Set Title
@@ -284,6 +315,7 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
     @IBOutlet private weak var actionButtonsSpaceConstraint: NSLayoutConstraint?
     @IBOutlet private weak var actionButtonsTrailingConstraint: NSLayoutConstraint?
     @IBOutlet private weak var actionButtonsBottomConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var actionButtonsHeightConstraint: NSLayoutConstraint?
 
     public override func awakeFromNib() {
         super.awakeFromNib()
