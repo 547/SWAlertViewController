@@ -52,7 +52,7 @@ open class CFAlertViewController: UIViewController    {
     // MARK: Public
     public internal(set) var textAlignment = NSTextAlignment(rawValue: 0)
     public internal(set) var margin:Any? = nil
-    public internal(set) var actionsArrangement = CFAlertControllerActionsArrangement.vertical
+    public internal(set) var actionsArrangement = CFAlertControllerActionsArrangement.horizontal
     public internal(set) var preferredStyle = CFAlertControllerStyle(rawValue: 0)    {
         didSet  {
             DispatchQueue.main.async {

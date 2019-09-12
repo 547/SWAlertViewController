@@ -1,5 +1,5 @@
 PODS:
-  - SWAlertViewController (0.1.0)
+  - SWAlertViewController (0.1.1)
 
 DEPENDENCIES:
   - SWAlertViewController
@@ -9,7 +9,7 @@ SPEC REPOS:
     - SWAlertViewController
 
 SPEC CHECKSUMS:
-  SWAlertViewController: 32cf6083d0a17abf1d536ff3b98458246b22bc12
+  SWAlertViewController: fb56282b4906b5944376d9324151d0f646ffdbab
 
 PODFILE CHECKSUM: 5ec4f1f7f31d7f877dc77c6b586003e4f1503e90
 
