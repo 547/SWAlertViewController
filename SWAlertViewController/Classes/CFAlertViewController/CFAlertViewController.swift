@@ -450,6 +450,7 @@ open class CFAlertViewController: UIViewController    {
         if let borderWidth = borderWidth as? CGFloat {
             self.borderWidth = borderWidth
         }
+        self.actionsArrangement = actionsArrangement
         
         self.textAlignment = textAlignment
         setHeaderView(headerView, shouldUpdateContainerFrame: false, withAnimation: false)
