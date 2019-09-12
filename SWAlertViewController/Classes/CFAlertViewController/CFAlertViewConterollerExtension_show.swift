@@ -8,7 +8,7 @@
 
 import UIKit
 public extension CFAlertViewController {
-    static func showAlter(title: String? = nil,
+    static func showAlert(title: String? = nil,
                                  titleColor: UIColor? = nil,
                                  message: String? = nil,
                                  messageColor: UIColor? = nil,
