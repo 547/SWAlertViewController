@@ -177,12 +177,12 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
         }
         else if titleCharCount <= 0 {
             titleLabelBottomConstraint?.isActive = false
-            subtitleLabelTopConstraint?.isActive = true
+            subtitleLabelTopConstraint?.isActive = false
             titleSubtitleVerticalSpacingConstraint?.constant = 0.0
         }
         else {
             titleLabelBottomConstraint?.isActive = false
-            subtitleLabelTopConstraint?.isActive = false
+            subtitleLabelTopConstraint?.isActive = true
             titleSubtitleVerticalSpacingConstraint?.constant = 5.0
         }
     }
