@@ -25,66 +25,56 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
     public var contentTopMargin: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            titleLabelTopConstraint?.constant = contentTopMargin
+            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var titlesSpace: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            subtitleLabelTopConstraint?.constant = titlesSpace
+            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var contentBottomMargin: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            titleLabelBottomConstraint?.constant = contentBottomMargin
-            subtitleLabelBottomConstraint?.constant = (titleLabelBottomConstraint?.constant)!
+            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var contentLeadingSpace: CGFloat = 0.0 {
         didSet {
             // Update Constraint Values
-            titleLeadingSpaceConstraint?.constant = contentLeadingSpace
-            subtitleLeadingSpaceConstraint?.constant = (titleLeadingSpaceConstraint?.constant)!
+            updateConstraint()
             layoutIfNeeded()
-        }
-    }
-    
-    public var bottonLineTop: CGFloat = 0.0 {
-        didSet {
-            // Update Constraint
-//            bottonLineTopConstraint?.constant = bottonLineTop
-//            layoutIfNeeded()
         }
     }
     public var bottonLineLeadingSpace: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            bottonLineLeadingSpaceConstraint?.constant = bottonLineLeadingSpace
+            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var bottonLineTrailing: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            bottonLineTrailingSpaceConstraint?.constant = bottonLineTrailing
+            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var bottonLineBottom: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            bottonLineBottomConstraint?.constant = bottonLineBottom
+            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var bottonLineHeight: CGFloat = 0.0 {
         didSet {
             // Update Constraint Values
-            bottonLineHeightConstraint?.constant = bottonLineHeight
+            updateConstraint()
             layoutIfNeeded()
         }
     }
@@ -94,10 +84,7 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
     // MARK: Private
     @IBOutlet private weak var titleLabelTopConstraint: NSLayoutConstraint?
     @IBOutlet private weak var titleLeadingSpaceConstraint: NSLayoutConstraint?
-    @IBOutlet private weak var titleLabelBottomConstraint: NSLayoutConstraint?
     @IBOutlet private weak var titleSubtitleVerticalSpacingConstraint: NSLayoutConstraint?
-    @IBOutlet private weak var subtitleLabelTopConstraint: NSLayoutConstraint?
-    @IBOutlet private weak var subtitleLeadingSpaceConstraint: NSLayoutConstraint?
     @IBOutlet private weak var subtitleLabelBottomConstraint: NSLayoutConstraint?
     
     
@@ -161,6 +148,9 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
         bottomLine.backgroundColor = bottomLineColor ?? UIColor.clear
         
         // Update Constraints
+        updateConstraint()
+    }
+    private func updateConstraint() -> () {
         var titleCharCount = 0
         if let count = titleLabel?.text?.count  {
             titleCharCount = count
@@ -170,20 +160,16 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
             subtitleCharCount = count
         }
         
-        if (titleCharCount <= 0 && subtitleCharCount <= 0) || subtitleCharCount <= 0 {
-            titleLabelBottomConstraint?.isActive = true
-            subtitleLabelTopConstraint?.isActive = false
-            titleSubtitleVerticalSpacingConstraint?.constant = 0.0
-        }
-        else if titleCharCount <= 0 {
-            titleLabelBottomConstraint?.isActive = false
-            subtitleLabelTopConstraint?.isActive = false
-            titleSubtitleVerticalSpacingConstraint?.constant = 0.0
-        }
-        else {
-            titleLabelBottomConstraint?.isActive = false
-            subtitleLabelTopConstraint?.isActive = true
-            titleSubtitleVerticalSpacingConstraint?.constant = 5.0
-        }
+        
+        
+        titleLabelTopConstraint?.constant = contentTopMargin
+        titleLeadingSpaceConstraint?.constant = contentLeadingSpace
+        titleSubtitleVerticalSpacingConstraint?.constant = (titleCharCount > 0 && subtitleCharCount > 0) ?  titlesSpace : 0
+        subtitleLabelBottomConstraint?.constant = contentBottomMargin
+        
+        bottonLineLeadingSpaceConstraint?.constant = bottonLineLeadingSpace
+        bottonLineTrailingSpaceConstraint?.constant = bottonLineTrailing
+        bottonLineBottomConstraint?.constant = bottonLineBottom
+        bottonLineHeightConstraint?.constant = bottonLineHeight
     }
 }
