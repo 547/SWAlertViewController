@@ -57,7 +57,7 @@
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="g1a-ZP-m4a"/>
-                                        <constraint firstAttribute="height" priority="999" constant="200" id="mgv-7M-W5c"/>
+                                        <constraint firstAttribute="height" constant="200" id="mgv-7M-W5c"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="dataSource" destination="-1" id="kEi-QW-7e1"/>

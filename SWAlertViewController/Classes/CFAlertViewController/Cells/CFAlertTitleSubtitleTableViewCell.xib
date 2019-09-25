@@ -22,7 +22,7 @@
                         <rect key="frame" x="20" y="20" width="280" height="24"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" priority="999" constant="24" id="xh3-yX-dke"/>
+                            <constraint firstAttribute="height" constant="24" id="xh3-yX-dke"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
                         <rect key="frame" x="20" y="44" width="280" height="17"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" priority="999" constant="17" id="5mW-Fr-tz5"/>
+                            <constraint firstAttribute="height" constant="17" id="5mW-Fr-tz5"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,15 +47,15 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="c2H-hb-4JF" firstAttribute="leading" secondItem="7TX-v0-D43" secondAttribute="leading" priority="999" constant="20" id="CxI-hJ-7HO"/>
-                    <constraint firstItem="c2H-hb-4JF" firstAttribute="top" secondItem="7TX-v0-D43" secondAttribute="top" priority="999" constant="20" id="FAB-Yl-JxS"/>
+                    <constraint firstItem="c2H-hb-4JF" firstAttribute="leading" secondItem="7TX-v0-D43" secondAttribute="leading" constant="20" id="CxI-hJ-7HO"/>
+                    <constraint firstItem="c2H-hb-4JF" firstAttribute="top" secondItem="7TX-v0-D43" secondAttribute="top" constant="20" id="FAB-Yl-JxS"/>
                     <constraint firstItem="7tN-9S-3pI" firstAttribute="centerX" secondItem="7TX-v0-D43" secondAttribute="centerX" id="GZe-Hz-0S4"/>
                     <constraint firstAttribute="trailing" secondItem="rAa-Pa-fld" secondAttribute="trailing" priority="999" id="NTH-pC-CaP"/>
-                    <constraint firstItem="7tN-9S-3pI" firstAttribute="top" secondItem="c2H-hb-4JF" secondAttribute="bottom" priority="999" id="O1H-9h-nzg"/>
+                    <constraint firstItem="7tN-9S-3pI" firstAttribute="top" secondItem="c2H-hb-4JF" secondAttribute="bottom" id="O1H-9h-nzg"/>
                     <constraint firstAttribute="bottom" secondItem="rAa-Pa-fld" secondAttribute="bottom" priority="999" id="QPs-1u-64i"/>
                     <constraint firstItem="c2H-hb-4JF" firstAttribute="centerX" secondItem="7TX-v0-D43" secondAttribute="centerX" id="c7z-83-rXk"/>
                     <constraint firstItem="7tN-9S-3pI" firstAttribute="leading" secondItem="c2H-hb-4JF" secondAttribute="leading" id="ewa-42-QXI"/>
-                    <constraint firstItem="rAa-Pa-fld" firstAttribute="top" secondItem="7tN-9S-3pI" secondAttribute="bottom" priority="999" constant="25" id="qDQ-WG-2qc"/>
+                    <constraint firstItem="rAa-Pa-fld" firstAttribute="top" secondItem="7tN-9S-3pI" secondAttribute="bottom" constant="25" id="qDQ-WG-2qc"/>
                     <constraint firstItem="rAa-Pa-fld" firstAttribute="leading" secondItem="7TX-v0-D43" secondAttribute="leading" priority="999" id="rhE-B1-Npx"/>
                 </constraints>
             </tableViewCellContentView>

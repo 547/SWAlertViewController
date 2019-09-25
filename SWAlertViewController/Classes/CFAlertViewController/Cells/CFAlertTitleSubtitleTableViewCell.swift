@@ -25,56 +25,48 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
     public var contentTopMargin: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var titlesSpace: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var contentBottomMargin: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var contentLeadingSpace: CGFloat = 0.0 {
         didSet {
             // Update Constraint Values
-            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var bottonLineLeadingSpace: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var bottonLineTrailing: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var bottonLineBottom: CGFloat = 0.0 {
         didSet {
             // Update Constraint
-            updateConstraint()
             layoutIfNeeded()
         }
     }
     public var bottonLineHeight: CGFloat = 0.0 {
         didSet {
             // Update Constraint Values
-            updateConstraint()
             layoutIfNeeded()
         }
     }
@@ -128,9 +120,11 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
     
     // MARK: - Layout Methods
     override public func layoutSubviews() {
-        super.layoutIfNeeded()
+        super.layoutSubviews()
+//        super.layoutIfNeeded()
         contentView.setNeedsLayout()
         contentView.layoutIfNeeded()
+        updateConstraint()
     }
     
     
@@ -150,27 +144,28 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
         bottomLine.backgroundColor = bottomLineColor ?? UIColor.clear
         
         // Update Constraints
-        updateConstraint()
+        layoutIfNeeded()
     }
     private func updateConstraint() -> () {
+        titleLeadingSpaceConstraint?.constant = contentLeadingSpace
         var titleCharCount = 0
         var titleHeight:CGFloat = 0
         if let text = titleLabel?.text, let width = titleLabel?.bounds.width, let font = titleLabel?.font {
             titleCharCount = text.count
-            titleHeight = NSString.init(string: text).boundingRect(with: CGSize(width: width, height: .infinity), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil).height
+            titleHeight = NSString.init(string: text).boundingRect(with: CGSize(width: width, height: .infinity), options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSAttributedString.Key.font: font], context: nil).height + 5
             
         }
         var subtitleCharCount = 0
         var subtitleHeight:CGFloat = 0
         if let text = subtitleLabel?.text, let width = subtitleLabel?.bounds.width, let font = subtitleLabel?.font   {
             subtitleCharCount = text.count
-            subtitleHeight = NSString.init(string: text).boundingRect(with: CGSize(width: width, height: .infinity), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil).height
+            subtitleHeight = NSString.init(string: text).boundingRect(with: CGSize(width: width, height: .infinity), options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSAttributedString.Key.font: font], context: nil).height + 5
         }
         
         
         titleLabelHeightConstraint?.constant = titleHeight
         titleLabelTopConstraint?.constant = contentTopMargin
-        titleLeadingSpaceConstraint?.constant = contentLeadingSpace
+        
         titleSubtitleVerticalSpacingConstraint?.constant = (titleCharCount > 0 && subtitleCharCount > 0) ?  titlesSpace : 0
         subtitleLabelBottomConstraint?.constant = contentBottomMargin
         subtitleLabelHeightConstraint?.constant = subtitleHeight
