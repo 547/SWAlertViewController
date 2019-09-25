@@ -21,12 +21,18 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2H-hb-4JF">
                         <rect key="frame" x="20" y="20" width="280" height="24"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="999" constant="24" id="xh3-yX-dke"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="700" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tN-9S-3pI">
-                        <rect key="frame" x="20" y="49" width="280" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tN-9S-3pI">
+                        <rect key="frame" x="20" y="44" width="280" height="17"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="999" constant="17" id="5mW-Fr-tz5"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -45,11 +51,11 @@
                     <constraint firstItem="c2H-hb-4JF" firstAttribute="top" secondItem="7TX-v0-D43" secondAttribute="top" priority="999" constant="20" id="FAB-Yl-JxS"/>
                     <constraint firstItem="7tN-9S-3pI" firstAttribute="centerX" secondItem="7TX-v0-D43" secondAttribute="centerX" id="GZe-Hz-0S4"/>
                     <constraint firstAttribute="trailing" secondItem="rAa-Pa-fld" secondAttribute="trailing" priority="999" id="NTH-pC-CaP"/>
-                    <constraint firstItem="7tN-9S-3pI" firstAttribute="top" secondItem="c2H-hb-4JF" secondAttribute="bottom" priority="999" constant="5" id="O1H-9h-nzg"/>
+                    <constraint firstItem="7tN-9S-3pI" firstAttribute="top" secondItem="c2H-hb-4JF" secondAttribute="bottom" priority="999" id="O1H-9h-nzg"/>
                     <constraint firstAttribute="bottom" secondItem="rAa-Pa-fld" secondAttribute="bottom" priority="999" id="QPs-1u-64i"/>
                     <constraint firstItem="c2H-hb-4JF" firstAttribute="centerX" secondItem="7TX-v0-D43" secondAttribute="centerX" id="c7z-83-rXk"/>
                     <constraint firstItem="7tN-9S-3pI" firstAttribute="leading" secondItem="c2H-hb-4JF" secondAttribute="leading" id="ewa-42-QXI"/>
-                    <constraint firstItem="rAa-Pa-fld" firstAttribute="top" secondItem="7tN-9S-3pI" secondAttribute="bottom" priority="999" constant="20" id="qDQ-WG-2qc"/>
+                    <constraint firstItem="rAa-Pa-fld" firstAttribute="top" secondItem="7tN-9S-3pI" secondAttribute="bottom" priority="999" constant="25" id="qDQ-WG-2qc"/>
                     <constraint firstItem="rAa-Pa-fld" firstAttribute="leading" secondItem="7TX-v0-D43" secondAttribute="leading" priority="999" id="rhE-B1-Npx"/>
                 </constraints>
             </tableViewCellContentView>
@@ -63,7 +69,9 @@
                 <outlet property="bottonLineTrailingSpaceConstraint" destination="NTH-pC-CaP" id="nRp-R2-K8m"/>
                 <outlet property="subtitleLabel" destination="7tN-9S-3pI" id="JFB-mJ-rIm"/>
                 <outlet property="subtitleLabelBottomConstraint" destination="qDQ-WG-2qc" id="ux4-dC-1Dr"/>
+                <outlet property="subtitleLabelHeightConstraint" destination="5mW-Fr-tz5" id="ceH-2X-8dz"/>
                 <outlet property="titleLabel" destination="c2H-hb-4JF" id="dDG-zS-56M"/>
+                <outlet property="titleLabelHeightConstraint" destination="xh3-yX-dke" id="VP3-vz-NPF"/>
                 <outlet property="titleLabelTopConstraint" destination="FAB-Yl-JxS" id="ASK-yf-pek"/>
                 <outlet property="titleLeadingSpaceConstraint" destination="CxI-hJ-7HO" id="cS6-dV-xVb"/>
                 <outlet property="titleSubtitleVerticalSpacingConstraint" destination="O1H-9h-nzg" id="ptH-R7-Upm"/>

@@ -607,8 +607,11 @@ open class CFAlertViewController: UIViewController    {
         let titleSubtitleCellNib = UINib(nibName: CFAlertTitleSubtitleTableViewCell.identifier(), bundle: Bundle(for: CFAlertTitleSubtitleTableViewCell.self))
         tableView?.register(titleSubtitleCellNib, forCellReuseIdentifier: CFAlertTitleSubtitleTableViewCell.identifier())
         
+        tableView?.rowHeight = UITableView.automaticDimension
+        tableView?.estimatedRowHeight = 44
+        
         // Add Key Value Observer
-        tableView?.addObserver(self, forKeyPath: "contentSize", options: [.new, .old, .prior], context: nil)
+        tableView?.addObserver(self, forKeyPath: "contentSize", options: [.new, .initial, .prior], context: nil)
     }
     
     internal func loadDisplayContent() {
@@ -796,6 +799,7 @@ open class CFAlertViewController: UIViewController    {
         
                 // Update Container View Frame
                 self.updateContainerViewFrame()
+                self.view.layoutIfNeeded()
             }
         }
     }
@@ -1079,13 +1083,13 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
         return cell!
     }
     
-    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
+//    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+//
+//    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
     
     
     // MARK: UITableViewDelegate

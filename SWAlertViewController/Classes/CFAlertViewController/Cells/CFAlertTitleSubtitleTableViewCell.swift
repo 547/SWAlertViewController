@@ -83,9 +83,11 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
     
     // MARK: Private
     @IBOutlet private weak var titleLabelTopConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var titleLabelHeightConstraint: NSLayoutConstraint?
     @IBOutlet private weak var titleLeadingSpaceConstraint: NSLayoutConstraint?
     @IBOutlet private weak var titleSubtitleVerticalSpacingConstraint: NSLayoutConstraint?
     @IBOutlet private weak var subtitleLabelBottomConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var subtitleLabelHeightConstraint: NSLayoutConstraint?
     
     
 //    @IBOutlet private weak var bottonLineTopConstraint: NSLayoutConstraint?
@@ -152,20 +154,26 @@ public class CFAlertTitleSubtitleTableViewCell: UITableViewCell {
     }
     private func updateConstraint() -> () {
         var titleCharCount = 0
-        if let count = titleLabel?.text?.count  {
-            titleCharCount = count
+        var titleHeight:CGFloat = 0
+        if let text = titleLabel?.text, let width = titleLabel?.bounds.width, let font = titleLabel?.font {
+            titleCharCount = text.count
+            titleHeight = NSString.init(string: text).boundingRect(with: CGSize(width: width, height: .infinity), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil).height
+            
         }
         var subtitleCharCount = 0
-        if let count = subtitleLabel?.text?.count  {
-            subtitleCharCount = count
+        var subtitleHeight:CGFloat = 0
+        if let text = subtitleLabel?.text, let width = subtitleLabel?.bounds.width, let font = subtitleLabel?.font   {
+            subtitleCharCount = text.count
+            subtitleHeight = NSString.init(string: text).boundingRect(with: CGSize(width: width, height: .infinity), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil).height
         }
         
         
-        
+        titleLabelHeightConstraint?.constant = titleHeight
         titleLabelTopConstraint?.constant = contentTopMargin
         titleLeadingSpaceConstraint?.constant = contentLeadingSpace
         titleSubtitleVerticalSpacingConstraint?.constant = (titleCharCount > 0 && subtitleCharCount > 0) ?  titlesSpace : 0
         subtitleLabelBottomConstraint?.constant = contentBottomMargin
+        subtitleLabelHeightConstraint?.constant = subtitleHeight
         
         bottonLineLeadingSpaceConstraint?.constant = bottonLineLeadingSpace
         bottonLineTrailingSpaceConstraint?.constant = bottonLineTrailing
