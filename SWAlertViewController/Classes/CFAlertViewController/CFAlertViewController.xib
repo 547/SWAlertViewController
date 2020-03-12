@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,6 +11,9 @@
             <connections>
                 <outlet property="backgroundBlurView" destination="S2j-aa-3dE" id="0RR-wy-JuL"/>
                 <outlet property="backgroundColorView" destination="Rhh-QO-kOQ" id="Vzw-t2-yUl"/>
+                <outlet property="cancelButton" destination="avP-wu-oSp" id="jnZ-L6-2aX"/>
+                <outlet property="cancelButtonHeightConstraint" destination="f2w-Bw-ani" id="6v7-3J-3Hk"/>
+                <outlet property="cancelButtonTopConstraint" destination="34n-dC-Ogi" id="Wge-ml-cVT"/>
                 <outlet property="containerView" destination="oE9-Fa-uD3" id="U7b-iR-Wvb"/>
                 <outlet property="containerViewBottomConstraint" destination="VQq-aN-B81" id="5Vk-q7-S71"/>
                 <outlet property="containerViewCenterYConstraint" destination="H8R-Gq-Eee" id="AJR-2d-FW9"/>
@@ -50,7 +51,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oE9-Fa-uD3">
-                            <rect key="frame" x="10" y="233.5" width="355" height="200"/>
+                            <rect key="frame" x="10" y="204.5" width="355" height="258"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-GW-3Ko">
                                     <rect key="frame" x="0.0" y="0.0" width="355" height="200"/>
@@ -64,13 +65,26 @@
                                         <outlet property="delegate" destination="-1" id="iCO-vP-98q"/>
                                     </connections>
                                 </tableView>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avP-wu-oSp" customClass="CFPushButton" customModule="SWAlertViewController_Example" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="208" width="355" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="f2w-Bw-ani"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="cancelButtonClicked:" destination="-1" eventType="touchUpInside" id="nct-h7-xER"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstItem="avP-wu-oSp" firstAttribute="top" secondItem="bKB-GW-3Ko" secondAttribute="bottom" constant="8" id="34n-dC-Ogi"/>
+                                <constraint firstItem="avP-wu-oSp" firstAttribute="centerX" secondItem="bKB-GW-3Ko" secondAttribute="centerX" id="6eH-G1-VMJ"/>
                                 <constraint firstItem="bKB-GW-3Ko" firstAttribute="centerX" secondItem="oE9-Fa-uD3" secondAttribute="centerX" id="EmZ-wI-13C"/>
                                 <constraint firstItem="bKB-GW-3Ko" firstAttribute="top" secondItem="oE9-Fa-uD3" secondAttribute="top" id="Ol2-pp-MKV"/>
                                 <constraint firstAttribute="trailing" secondItem="bKB-GW-3Ko" secondAttribute="trailing" priority="751" id="Qye-xz-rK3"/>
-                                <constraint firstAttribute="bottom" secondItem="bKB-GW-3Ko" secondAttribute="bottom" id="dIY-S9-Ylm"/>
+                                <constraint firstItem="avP-wu-oSp" firstAttribute="width" secondItem="bKB-GW-3Ko" secondAttribute="width" id="S1b-Bv-4f2"/>
+                                <constraint firstAttribute="bottom" secondItem="avP-wu-oSp" secondAttribute="bottom" id="aVa-JG-2tC"/>
                                 <constraint firstItem="bKB-GW-3Ko" firstAttribute="leading" secondItem="oE9-Fa-uD3" secondAttribute="leading" priority="751" id="kLO-AL-TvV"/>
                             </constraints>
                         </view>

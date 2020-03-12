@@ -17,6 +17,7 @@ import Foundation
 @objc public enum CFAlertControllerStyle : Int {
     case alert = 0
     case actionSheet
+    case customActionSheet
     case notification
 }
 @objc public enum CFAlertControllerActionsArrangement : Int {

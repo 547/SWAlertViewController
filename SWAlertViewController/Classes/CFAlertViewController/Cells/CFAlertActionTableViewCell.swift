@@ -15,9 +15,6 @@ public protocol CFAlertActionTableViewCellDelegate: class {
 
 
 public class CFAlertActionTableViewCell: UITableViewCell {
-    
-    
-    // MARK: - Variables
     // MARK: Public
     public static func identifier() -> String    {
         return String(describing: CFAlertActionTableViewCell.self)

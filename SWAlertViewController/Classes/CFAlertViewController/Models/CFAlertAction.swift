@@ -29,6 +29,7 @@ open class CFAlertAction: NSObject, NSCopying {
     
     // MARK: - Variables
     @objc public var title: String?
+    @objc public var leftImage: UIImage?
     @objc public var style: CFAlertActionStyle = .Default
     @objc public var alignment: CFAlertActionAlignment = .justified
     @objc public var backgroundColor: UIColor?
@@ -44,6 +45,7 @@ open class CFAlertAction: NSObject, NSCopying {
     
     // MARK: - Initialisation Method
     public class func action(title: String?,
+                                   leftImage: UIImage?,
                                    style: CFAlertActionStyle,
                                    alignment: CFAlertActionAlignment,
                                    backgroundColor: UIColor? = nil,
@@ -55,6 +57,7 @@ open class CFAlertAction: NSObject, NSCopying {
                                    contentEdgeInsets:UIEdgeInsets? = nil,
                                    handler: CFAlertActionHandlerBlock? = nil) -> CFAlertAction  {
         return CFAlertAction.init(title: title,
+                                  leftImage: leftImage,
                                   style: style,
                                   alignment: alignment,
                                   backgroundColor: backgroundColor,
@@ -68,6 +71,7 @@ open class CFAlertAction: NSObject, NSCopying {
     }
     
     public convenience init(title: String?,
+                                  leftImage: UIImage?,
                                   style: CFAlertActionStyle,
                                   alignment: CFAlertActionAlignment,
                                   backgroundColor: UIColor? = nil,
@@ -84,6 +88,7 @@ open class CFAlertAction: NSObject, NSCopying {
         
         // Set Alert Properties
         self.title = title
+        self.leftImage = leftImage
         self.style = style
         self.alignment = alignment
         self.backgroundColor = backgroundColor
@@ -100,6 +105,7 @@ open class CFAlertAction: NSObject, NSCopying {
     // MARK: - NSCopying
     public func copy(with zone: NSZone? = nil) -> Any {
         return CFAlertAction.init(title: title,
+                                  leftImage: leftImage,
                                   style: style,
                                   alignment: alignment,
                                   backgroundColor: backgroundColor,

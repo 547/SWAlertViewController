@@ -16,7 +16,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9b2-bz-bPP">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUQ-Sc-fAK" customClass="CFPushButton" customModule="SWAlertViewController_Example" customModuleProvider="target">
+                        <rect key="frame" x="20" y="0.5" width="280" height="49.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <action selector="actionButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6Nh-LR-6oq"/>
+                        </connections>
+                    </button>
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9b2-bz-bPP">
                         <rect key="frame" x="20" y="0.5" width="280" height="49.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4i5-4y-Sau">
@@ -33,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4i5-4y-Sau" firstAttribute="leading" secondItem="9b2-bz-bPP" secondAttribute="leading" constant="16" id="29Y-fa-AOU"/>
                             <constraint firstItem="fF5-A3-pUP" firstAttribute="leading" secondItem="4i5-4y-Sau" secondAttribute="trailing" constant="8" id="50a-DA-KfT"/>
@@ -46,11 +53,22 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
+                    <constraint firstItem="KUQ-Sc-fAK" firstAttribute="centerX" secondItem="9b2-bz-bPP" secondAttribute="centerX" id="5SW-0O-RF5"/>
                     <constraint firstItem="9b2-bz-bPP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Ihm-aT-QQ8"/>
+                    <constraint firstItem="KUQ-Sc-fAK" firstAttribute="width" secondItem="9b2-bz-bPP" secondAttribute="width" id="Srn-aj-Gx2"/>
+                    <constraint firstItem="KUQ-Sc-fAK" firstAttribute="height" secondItem="9b2-bz-bPP" secondAttribute="height" id="UlS-bf-add"/>
                     <constraint firstItem="9b2-bz-bPP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="c1E-HR-5v6"/>
                     <constraint firstItem="9b2-bz-bPP" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="nsW-RB-2R0"/>
+                    <constraint firstItem="KUQ-Sc-fAK" firstAttribute="centerY" secondItem="9b2-bz-bPP" secondAttribute="centerY" id="nvj-SV-MCP"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="actionButton" destination="KUQ-Sc-fAK" id="zK8-YP-xrq"/>
+                <outlet property="actionImageView" destination="4i5-4y-Sau" id="hne-1w-nYc"/>
+                <outlet property="actionTitleLabel" destination="fF5-A3-pUP" id="DAQ-zt-NXU"/>
+                <outlet property="actionView" destination="9b2-bz-bPP" id="j94-Jc-ebn"/>
+                <outlet property="actionViewHeightConstraint" destination="nGN-Ee-eJl" id="ddf-xZ-puI"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="155.35714285714286"/>
         </tableViewCell>
     </objects>

@@ -47,8 +47,7 @@ open class CFAlertViewController: UIViewController    {
                             tableView.scrollIndicatorInsets = tableView.contentInset
                         }
                     }
-                }
-                else if self.preferredStyle == .alert   {
+                }else if self.preferredStyle == .alert   {
                     
                     if #available(iOS 11.0, *) {
                         self.mainViewTopConstraint?.constant = self.view.safeAreaInsets.top
@@ -64,9 +63,23 @@ open class CFAlertViewController: UIViewController    {
                     self.tableViewWidthConstraint?.constant = 500
                     self.tableViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 751)
                     self.tableViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 751)
-                }
-                else if self.preferredStyle == .actionSheet {
+                }else if self.preferredStyle == .actionSheet {
                     
+                    if #available(iOS 11.0, *) {
+                        self.mainViewTopConstraint?.constant = self.view.safeAreaInsets.top
+                        self.mainViewBottomConstraint?.constant = self.view.safeAreaInsets.bottom
+                    }
+                    
+                    self.containerViewTopConstraint?.isActive = false
+                    self.containerViewLeadingConstraint?.constant = 10
+                    self.containerViewCenterYConstraint?.isActive = false
+                    self.containerViewBottomConstraint?.isActive = true
+                    self.containerViewTrailingConstraint?.constant = 10
+                    
+                    self.tableViewWidthConstraint?.constant = 500
+                    self.tableViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 751)
+                    self.tableViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 751)
+                }else if self.preferredStyle == .customActionSheet{
                     if #available(iOS 11.0, *) {
                         self.mainViewTopConstraint?.constant = self.view.safeAreaInsets.top
                         self.mainViewBottomConstraint?.constant = self.view.safeAreaInsets.bottom
@@ -182,6 +195,8 @@ open class CFAlertViewController: UIViewController    {
     internal var actionsHeight:CGFloat? = nil
     
     internal var actionList = [CFAlertAction]()
+    private var notCancelActionList = [CFAlertAction]()
+    private var cancelAction:CFAlertAction? = nil
     internal var dismissHandler: CFAlertViewControllerDismissBlock?
     internal var keyboardHeight: CGFloat = 0.0   {
         
@@ -209,6 +224,7 @@ open class CFAlertViewController: UIViewController    {
     @IBOutlet internal weak var mainViewTopConstraint: NSLayoutConstraint?
     @IBOutlet internal weak var mainViewBottomConstraint: NSLayoutConstraint?
     @IBOutlet internal weak var tableView: UITableView?
+    @IBOutlet weak var cancelButton: CFPushButton!
     @IBOutlet internal weak var containerViewTopConstraint: NSLayoutConstraint?
     @IBOutlet internal weak var containerViewLeadingConstraint: NSLayoutConstraint?
     @IBOutlet internal weak var containerViewCenterYConstraint: NSLayoutConstraint?
@@ -218,7 +234,8 @@ open class CFAlertViewController: UIViewController    {
     @IBOutlet internal weak var tableViewHeightConstraint: NSLayoutConstraint?
     @IBOutlet internal weak var tableViewWidthConstraint: NSLayoutConstraint?
     @IBOutlet internal weak var tableViewTrailingConstraint: NSLayoutConstraint?
-    
+    @IBOutlet internal weak var cancelButtonTopConstraint: NSLayoutConstraint?
+    @IBOutlet internal weak var cancelButtonHeightConstraint: NSLayoutConstraint?
     
     // MARK: - Initialisation Methods
     public class func alertController(title: String?,
@@ -542,6 +559,12 @@ open class CFAlertViewController: UIViewController    {
                                                                                      contentScrollView: tableView)
             transitioningDelegate = interactiveTransitionDelegate
         }
+        else if self.preferredStyle == .customActionSheet {
+            interactiveTransitionDelegate =  CFAlertActionSheetInteractiveTransition(modalViewController: self,
+                                                                                     swipeGestureView: containerView,
+                                                                                     contentScrollView: tableView)
+            transitioningDelegate = interactiveTransitionDelegate
+        }
         interactiveTransitionDelegate?.delegate = self
         
         // Update Background Tap
@@ -568,6 +591,8 @@ open class CFAlertViewController: UIViewController    {
         tableView?.register(doubelActionCellNib, forCellReuseIdentifier: CFAlertDoubleActionTableViewCell.identifier())
         let titleSubtitleCellNib = UINib(nibName: CFAlertTitleSubtitleTableViewCell.identifier(), bundle: Bundle(for: CFAlertTitleSubtitleTableViewCell.self))
         tableView?.register(titleSubtitleCellNib, forCellReuseIdentifier: CFAlertTitleSubtitleTableViewCell.identifier())
+        let leftImageCellNib = UINib(nibName: CFAlertLeftImageActionTableViewCell.identifier(), bundle: Bundle(for: CFAlertLeftImageActionTableViewCell.self))
+        tableView?.register(leftImageCellNib, forCellReuseIdentifier: CFAlertLeftImageActionTableViewCell.identifier())
         
         tableView?.rowHeight = UITableView.automaticDimension
         tableView?.estimatedRowHeight = 44
@@ -593,6 +618,37 @@ open class CFAlertViewController: UIViewController    {
             containerView?.layer.cornerRadius = 10.0
         }
         else if preferredStyle == .actionSheet   {
+            if let cancelAction = cancelAction {
+                cancelButton.setTitle(cancelAction.title, for: .normal)
+                cancelButton.titleLabel?.font = cancelAction.textFont
+                cancelButton.setTitleColor(cancelAction.textColor, for: .normal)
+                switch cancelAction.alignment {
+                case .justified:
+                    cancelButton.contentHorizontalAlignment = .fill
+                    cancelButton.titleLabel?.textAlignment = .justified
+                case .right:
+                    cancelButton.contentHorizontalAlignment = .right
+                    cancelButton.titleLabel?.textAlignment = .right
+                case .left:
+                    cancelButton.contentHorizontalAlignment = .left
+                    cancelButton.titleLabel?.textAlignment = .left
+                case .center:
+                    cancelButton.contentHorizontalAlignment = .center
+                    cancelButton.titleLabel?.textAlignment = .center
+                }
+                cancelButton.backgroundColor = cancelAction.backgroundColor ?? CFAlertColors.CF_ALERT_DEFAULT_CONTAINER_VIEW_BACKGROUND_COLOR
+                cancelButton.layer.cornerRadius = cancelAction.cornerRadius ?? 10.0
+                cancelButton.layer.borderColor = (cancelAction.borderColor ?? UIColor.clear).cgColor
+                cancelButton.layer.borderWidth = cancelAction.borderWidth ?? 0
+                cancelButton.contentEdgeInsets = cancelAction.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
+            }
+            containerView?.backgroundColor  = UIColor.clear
+            tableView?.backgroundColor = CFAlertColors.CF_ALERT_DEFAULT_CONTAINER_VIEW_BACKGROUND_COLOR
+            cancelButton.backgroundColor = CFAlertColors.CF_ALERT_DEFAULT_CONTAINER_VIEW_BACKGROUND_COLOR
+            containerView?.layer.cornerRadius = 10.0
+            cancelButton.layer.cornerRadius = 10.0
+        }
+        else if preferredStyle == .customActionSheet   {
             containerView?.layer.cornerRadius = 10.0
         }
         if let cornerRadius = cornerRadius {
@@ -630,6 +686,16 @@ open class CFAlertViewController: UIViewController    {
     }
     
     
+    // MARK: - Button Click Events
+    @IBAction internal func cancelButtonClicked(_ sender: Any) {
+        dismissAlert(withAnimation: true, dismissReason: .onActionTap, completion: {[weak self] () -> Void in
+            // Call Action Handler If Set
+            if let action = self?.cancelAction, let actionHandler = action.handler {
+                actionHandler(action)
+            }
+        })
+    }
+    
     // MARK: - Helper Methods
     @objc public func addAction(_ action: CFAlertAction?) {
         
@@ -641,6 +707,9 @@ open class CFAlertViewController: UIViewController    {
                     // It means this alert already contains a Cancel action. Throw an Assert so developer understands the reason.
                     assert(existingAction.style != .Cancel, "ERROR : CFAlertViewController can only have one action with a style of CFAlertActionStyle.Cancel")
                 }
+                cancelAction = action
+            }else {
+                notCancelActionList.append(action)
             }
             // Add Action Into List
             actionList.append(action)
@@ -785,6 +854,13 @@ open class CFAlertViewController: UIViewController    {
                 tableView.bounces = true
             }
         }
+        if let _ = cancelAction, self.preferredStyle == .actionSheet {
+            cancelButtonTopConstraint?.constant = 8
+            cancelButtonHeightConstraint?.constant = 50
+        }else {
+            cancelButtonTopConstraint?.constant = 0
+            cancelButtonHeightConstraint?.constant = 0
+        }
     }
     
     
@@ -921,28 +997,31 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        var result = 0
         switch section {
             
         case 0:
             if let titleString = self.titleString, !titleString.isEmpty {
-                return 1
+                result = 1
             }
             if let messageString = self.messageString, !messageString.isEmpty  {
-                return 1
+                result = 1
             }
             
         case 1:
-            if actionsArrangement == .horizontal, (self.actions?.count ?? 0) >= 2 {
-                return 1
+            if self.preferredStyle != .actionSheet {
+                if actionsArrangement == .horizontal, (self.actions?.count ?? 0) >= 2 {
+                    result = 1
+                }
+                result = self.actionList.count
+            }else {
+                result = self.notCancelActionList.count
             }
-            return self.actionList.count
-            
         default:
             break
         }
         
-        return 0
+        return result
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -974,70 +1053,105 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
             }
             
         case 1:
-            if actionsArrangement == .horizontal, (self.actions?.count ?? 0) >= 2 {
-                // Get Action Cell Instance
-                cell = tableView.dequeueReusableCell(withIdentifier: CFAlertDoubleActionTableViewCell.identifier())
-                let actionCell: CFAlertDoubleActionTableViewCell? = (cell as? CFAlertDoubleActionTableViewCell)
-                // Set Delegate
-                actionCell?.delegate = self
-                // Set Action
-                actionCell?.leftAction = self.actionList[0]
-                actionCell?.rightAction = self.actionList[1]
-                // Set Top Margin For First Action
-                if let titleString = titleString, let messageString = messageString, (!titleString.isEmpty && !messageString.isEmpty)   {
-                    actionCell?.actionButtonsTopMargin = self.actionsTop ?? 12.0
-                }else {
-                    actionCell?.actionButtonsTopMargin = self.actionsTop ?? 20.0
-                }
-                // Set Bottom Margin For Last Action
-                if indexPath.row > 0    {
-                    actionCell?.actionButtonsTopMargin = self.actionsTop ?? 0.0
-                }
-                actionCell?.actionButtonsBottomMargin = self.actionsBottom ?? 20.0
-                
-
-                actionCell?.actionButtonsLeftMargin = self.actionsLeading ?? 20
-                actionCell?.actionButtonsRightMargin = self.actionsTrailing ?? 20
-                actionCell?.actionButtonsSpace = self.actionsSpace ?? 18
-                actionCell?.actionButtonsHeight = self.actionsHeight ?? 49.5
-            }else {
-                // Get Action Cell Instance
-                cell = tableView.dequeueReusableCell(withIdentifier: CFAlertActionTableViewCell.identifier())
-                let actionCell: CFAlertActionTableViewCell? = (cell as? CFAlertActionTableViewCell)
-                // Set Delegate
-                actionCell?.delegate = self
-                // Set Action
-                actionCell?.action = self.actionList[indexPath.row]
-                // Set Top Margin For First Action
-                if indexPath.row == 0 {
+            if self.preferredStyle != .actionSheet {
+                if actionsArrangement == .horizontal, (self.actions?.count ?? 0) >= 2 {
+                    // Get Action Cell Instance
+                    cell = tableView.dequeueReusableCell(withIdentifier: CFAlertDoubleActionTableViewCell.identifier())
+                    let actionCell: CFAlertDoubleActionTableViewCell? = (cell as? CFAlertDoubleActionTableViewCell)
+                    // Set Delegate
+                    actionCell?.delegate = self
+                    // Set Action
+                    actionCell?.leftAction = self.actionList[0]
+                    actionCell?.rightAction = self.actionList[1]
+                    // Set Top Margin For First Action
                     if let titleString = titleString, let messageString = messageString, (!titleString.isEmpty && !messageString.isEmpty)   {
-                        actionCell?.actionButtonTopMargin = self.actionsTop ?? 12.0
+                        actionCell?.actionButtonsTopMargin = self.actionsTop ?? 12.0
+                    }else {
+                        actionCell?.actionButtonsTopMargin = self.actionsTop ?? 20.0
                     }
-                    else {
-                        actionCell?.actionButtonTopMargin = self.actionsTop ?? 20.0
-                    }
-                }
-                else    {
-                    actionCell?.actionButtonTopMargin = self.actionsTop ?? 0.0
-                }
-                // Set Bottom Margin For Last Action
-                if indexPath.row == self.actionList.count - 1 {
+                    // Set Bottom Margin For Last Action
                     if indexPath.row > 0    {
+                        actionCell?.actionButtonsTopMargin = self.actionsTop ?? 0.0
+                    }
+                    actionCell?.actionButtonsBottomMargin = self.actionsBottom ?? 20.0
+                    
+
+                    actionCell?.actionButtonsLeftMargin = self.actionsLeading ?? 20
+                    actionCell?.actionButtonsRightMargin = self.actionsTrailing ?? 20
+                    actionCell?.actionButtonsSpace = self.actionsSpace ?? 18
+                    actionCell?.actionButtonsHeight = self.actionsHeight ?? 49.5
+                }else {
+                    // Get Action Cell Instance
+                    cell = tableView.dequeueReusableCell(withIdentifier: CFAlertActionTableViewCell.identifier())
+                    let actionCell: CFAlertActionTableViewCell? = (cell as? CFAlertActionTableViewCell)
+                    // Set Delegate
+                    actionCell?.delegate = self
+                    // Set Action
+                    actionCell?.action = self.actionList[indexPath.row]
+                    // Set Top Margin For First Action
+                    if indexPath.row == 0 {
+                        if let titleString = titleString, let messageString = messageString, (!titleString.isEmpty && !messageString.isEmpty)   {
+                            actionCell?.actionButtonTopMargin = self.actionsTop ?? 12.0
+                        }
+                        else {
+                            actionCell?.actionButtonTopMargin = self.actionsTop ?? 20.0
+                        }
+                    }
+                    else    {
                         actionCell?.actionButtonTopMargin = self.actionsTop ?? 0.0
                     }
-                    actionCell?.actionButtonBottomMargin = self.actionsBottom ?? 20.0
+                    // Set Bottom Margin For Last Action
+                    if indexPath.row == self.actionList.count - 1 {
+                        if indexPath.row > 0    {
+                            actionCell?.actionButtonTopMargin = self.actionsTop ?? 0.0
+                        }
+                        actionCell?.actionButtonBottomMargin = self.actionsBottom ?? 20.0
+                    }
+                    else {
+                        actionCell?.actionButtonBottomMargin = self.actionsSpace ?? 10.0
+                    }
+                    
+                    
+                    actionCell?.actionButtonLeftMargin = self.actionsLeading ?? 20
+                    actionCell?.actionButtonRightMargin = self.actionsTrailing ?? 20
+                    actionCell?.actionButtonHeight = self.actionsHeight ?? 49.5
                 }
-                else {
-                    actionCell?.actionButtonBottomMargin = self.actionsSpace ?? 10.0
+            }else {
+                cell = tableView.dequeueReusableCell(withIdentifier: CFAlertLeftImageActionTableViewCell.identifier())
+                if self.notCancelActionList.count > indexPath.row {
+                    let action = self.notCancelActionList[indexPath.row]
+                    let actionCell: CFAlertLeftImageActionTableViewCell? = (cell as? CFAlertLeftImageActionTableViewCell)
+                    actionCell?.delegate = self
+                    actionCell?.action = action
+                    // Set Top Margin For First Action
+                    if indexPath.row == 0 {
+                        if let titleString = titleString, let messageString = messageString, (!titleString.isEmpty && !messageString.isEmpty)   {
+                            actionCell?.actionButtonTopMargin = self.actionsTop ?? 12.0
+                        }
+                        else {
+                            actionCell?.actionButtonTopMargin = self.actionsTop ?? 20.0
+                        }
+                    }
+                    else    {
+                        actionCell?.actionButtonTopMargin = self.actionsTop ?? 0.0
+                    }
+                    // Set Bottom Margin For Last Action
+                    if indexPath.row == self.notCancelActionList.count - 1 {
+                        if indexPath.row > 0    {
+                            actionCell?.actionButtonTopMargin = self.actionsTop ?? 0.0
+                        }
+                        actionCell?.actionButtonBottomMargin = self.actionsBottom ?? 20.0
+                    }
+                    else {
+                        actionCell?.actionButtonBottomMargin = self.actionsSpace ?? 10.0
+                    }
+                    
+                    
+                    actionCell?.actionButtonLeftMargin = self.actionsLeading ?? 20
+                    actionCell?.actionButtonRightMargin = self.actionsTrailing ?? 20
+                    actionCell?.actionButtonHeight = self.actionsHeight ?? 49.5
                 }
-                
-                
-                actionCell?.actionButtonLeftMargin = self.actionsLeading ?? 20
-                actionCell?.actionButtonRightMargin = self.actionsTrailing ?? 20
-                actionCell?.actionButtonHeight = self.actionsHeight ?? 49.5
             }
-            
-            
         default:
             break
         }

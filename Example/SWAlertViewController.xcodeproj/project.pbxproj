@@ -109,14 +109,14 @@
 		5C2ACE1A2329DCF2001D109A /* CFAlertViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5C2ACE262329DCF2001D109A /* CFAlertViewController.swift */,
+				5C2ACEB5232A19DB001D109A /* CFAlertViewConterollerExtension_show.swift */,
 				5CC46C5B241A1C3400542518 /* CFAlertColors.swift */,
 				5CC46C5D241A1F5E00542518 /* CFAlertEnums.swift */,
 				5CC46C5F241A1F8E00542518 /* CFAlertCallbacks.swift */,
 				5C2ACE1B2329DCF2001D109A /* Cells */,
 				5C2ACE222329DCF2001D109A /* CFAlertViewController.xib */,
 				5C2ACE232329DCF2001D109A /* Subclass */,
-				5C2ACE262329DCF2001D109A /* CFAlertViewController.swift */,
-				5C2ACEB5232A19DB001D109A /* CFAlertViewConterollerExtension_show.swift */,
 				5C2ACE272329DCF2001D109A /* Models */,
 				5C2ACE292329DCF2001D109A /* Transitions */,
 			);
