@@ -25,6 +25,11 @@
 		5C2ACE442329DCF2001D109A /* CFAlertBaseInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACE332329DCF2001D109A /* CFAlertBaseInteractiveTransition.swift */; };
 		5C2ACE452329DCF2001D109A /* CFAlertBaseTransitionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACE342329DCF2001D109A /* CFAlertBaseTransitionGestureRecognizer.swift */; };
 		5C2ACEB6232A19DB001D109A /* CFAlertViewConterollerExtension_show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2ACEB5232A19DB001D109A /* CFAlertViewConterollerExtension_show.swift */; };
+		5CC46C59241A18B700542518 /* CFAlertLeftImageActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC46C57241A18B700542518 /* CFAlertLeftImageActionTableViewCell.swift */; };
+		5CC46C5A241A18B700542518 /* CFAlertLeftImageActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC46C58241A18B700542518 /* CFAlertLeftImageActionTableViewCell.xib */; };
+		5CC46C5C241A1C3400542518 /* CFAlertColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC46C5B241A1C3400542518 /* CFAlertColors.swift */; };
+		5CC46C5E241A1F5E00542518 /* CFAlertEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC46C5D241A1F5E00542518 /* CFAlertEnums.swift */; };
+		5CC46C60241A1F8E00542518 /* CFAlertCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC46C5F241A1F8E00542518 /* CFAlertCallbacks.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -63,6 +68,11 @@
 		5C2ACE332329DCF2001D109A /* CFAlertBaseInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertBaseInteractiveTransition.swift; sourceTree = "<group>"; };
 		5C2ACE342329DCF2001D109A /* CFAlertBaseTransitionGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAlertBaseTransitionGestureRecognizer.swift; sourceTree = "<group>"; };
 		5C2ACEB5232A19DB001D109A /* CFAlertViewConterollerExtension_show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAlertViewConterollerExtension_show.swift; sourceTree = "<group>"; };
+		5CC46C57241A18B700542518 /* CFAlertLeftImageActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAlertLeftImageActionTableViewCell.swift; sourceTree = "<group>"; };
+		5CC46C58241A18B700542518 /* CFAlertLeftImageActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CFAlertLeftImageActionTableViewCell.xib; sourceTree = "<group>"; };
+		5CC46C5B241A1C3400542518 /* CFAlertColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAlertColors.swift; sourceTree = "<group>"; };
+		5CC46C5D241A1F5E00542518 /* CFAlertEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAlertEnums.swift; sourceTree = "<group>"; };
+		5CC46C5F241A1F8E00542518 /* CFAlertCallbacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAlertCallbacks.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SWAlertViewController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWAlertViewController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +109,9 @@
 		5C2ACE1A2329DCF2001D109A /* CFAlertViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5CC46C5B241A1C3400542518 /* CFAlertColors.swift */,
+				5CC46C5D241A1F5E00542518 /* CFAlertEnums.swift */,
+				5CC46C5F241A1F8E00542518 /* CFAlertCallbacks.swift */,
 				5C2ACE1B2329DCF2001D109A /* Cells */,
 				5C2ACE222329DCF2001D109A /* CFAlertViewController.xib */,
 				5C2ACE232329DCF2001D109A /* Subclass */,
@@ -120,6 +133,8 @@
 				5C2ACE1F2329DCF2001D109A /* CFAlertTitleSubtitleTableViewCell.xib */,
 				5C2ACE202329DCF2001D109A /* CFAlertActionTableViewCell.swift */,
 				5C2ACE212329DCF2001D109A /* CFAlertDoubleActionTableViewCell.swift */,
+				5CC46C57241A18B700542518 /* CFAlertLeftImageActionTableViewCell.swift */,
+				5CC46C58241A18B700542518 /* CFAlertLeftImageActionTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -358,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC46C5A241A18B700542518 /* CFAlertLeftImageActionTableViewCell.xib in Resources */,
 				5C2ACE3B2329DCF2001D109A /* CFAlertViewController.xib in Resources */,
 				5C2ACE362329DCF2001D109A /* CFAlertActionTableViewCell.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
@@ -387,15 +403,19 @@
 				5C2ACE432329DCF2001D109A /* CFAlertNotificationInteractiveTransition.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				5C2ACE372329DCF2001D109A /* CFAlertTitleSubtitleTableViewCell.swift in Sources */,
+				5CC46C5E241A1F5E00542518 /* CFAlertEnums.swift in Sources */,
 				5C2ACE392329DCF2001D109A /* CFAlertActionTableViewCell.swift in Sources */,
+				5CC46C59241A18B700542518 /* CFAlertLeftImageActionTableViewCell.swift in Sources */,
 				5C2ACE422329DCF2001D109A /* CFAlertNotificationTransitionGestureRecognizer.swift in Sources */,
 				5C2ACEB6232A19DB001D109A /* CFAlertViewConterollerExtension_show.swift in Sources */,
+				5CC46C60241A1F8E00542518 /* CFAlertCallbacks.swift in Sources */,
 				5C2ACE3E2329DCF2001D109A /* CFAlertAction.swift in Sources */,
 				5C2ACE412329DCF2001D109A /* CFAlertActionSheetTransitionGestureRecognizer.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				5C2ACE442329DCF2001D109A /* CFAlertBaseInteractiveTransition.swift in Sources */,
 				5C2ACE3F2329DCF2001D109A /* CFAlertPopupTransition.swift in Sources */,
 				5C2ACE3A2329DCF2001D109A /* CFAlertDoubleActionTableViewCell.swift in Sources */,
+				5CC46C5C241A1C3400542518 /* CFAlertColors.swift in Sources */,
 				5C2ACE452329DCF2001D109A /* CFAlertBaseTransitionGestureRecognizer.swift in Sources */,
 				5C2ACE402329DCF2001D109A /* CFAlertActionSheetInteractiveTransition.swift in Sources */,
 			);

@@ -10,44 +10,6 @@ import UIKit
 
 
 open class CFAlertViewController: UIViewController    {
-    
-    // MARK: - Declarations
-    public typealias CFAlertViewControllerDismissBlock = (_ dismissReason: CFAlertControllerDismissReason) -> ()
-    @objc public enum CFAlertControllerDismissReason : Int {
-        case none = 0
-        case onActionTap
-        case onBackgroundTap
-        case onInteractiveTransition
-    }
-    
-    @objc public enum CFAlertControllerStyle : Int {
-        case alert = 0
-        case actionSheet
-        case notification
-    }
-    @objc public enum CFAlertControllerActionsArrangement : Int {
-        ///每行显示1个按钮，可以显示N多个按钮
-        case vertical = 0
-        ///每行显示2个按钮，只可以显示2个按钮
-        case horizontal
-    }
-    @objc public enum CFAlertControllerBackgroundStyle : Int {
-        case plain = 0
-        case blur
-    }
-    @objc public static func CF_ALERT_DEFAULT_BACKGROUND_COLOR() -> UIColor   {
-        return UIColor(white: 0.0, alpha: 0.7)
-    }
-    @objc public static func CF_ALERT_DEFAULT_CONTAINER_VIEW_BACKGROUND_COLOR() -> UIColor   {
-        return UIColor.white
-    }
-    @objc public static func CF_ALERT_DEFAULT_TITLE_COLOR() -> UIColor {
-        return UIColor.black
-    }
-    @objc public static func CF_ALERT_DEFAULT_MESSAGE_COLOR() -> UIColor {
-        return UIColor.darkGray
-    }
-    
     // MARK: - Variables
     // MARK: Public
     public internal(set) var textAlignment = NSTextAlignment(rawValue: 0)
@@ -198,10 +160,10 @@ open class CFAlertViewController: UIViewController    {
     internal var borderColor:UIColor? = nil
     internal var borderWidth:CGFloat? = nil
     internal var titleString: String?
-    internal var titleColor: UIColor = CFAlertViewController.CF_ALERT_DEFAULT_TITLE_COLOR()
+    internal var titleColor: UIColor = CFAlertColors.CF_ALERT_DEFAULT_TITLE_COLOR
     internal var titleFont: UIFont? = nil
     internal var messageString: String?
-    internal var messageColor: UIColor = CFAlertViewController.CF_ALERT_DEFAULT_MESSAGE_COLOR()
+    internal var messageColor: UIColor = CFAlertColors.CF_ALERT_DEFAULT_MESSAGE_COLOR
     internal var messageFont: UIFont? = nil
     internal var titleAndMessageSpace:CGFloat? = nil
     ///文字和button之间的分隔线
@@ -475,7 +437,7 @@ open class CFAlertViewController: UIViewController    {
         // Assign Properties
         self.preferredStyle = preferredStyle
         backgroundStyle = .plain
-        backgroundColor = CFAlertViewController.CF_ALERT_DEFAULT_BACKGROUND_COLOR()
+        backgroundColor = CFAlertColors.CF_ALERT_DEFAULT_BACKGROUND_COLOR
         titleString = title
         if let titleColor = titleColor {
             self.titleColor = titleColor
@@ -621,7 +583,7 @@ open class CFAlertViewController: UIViewController    {
         backgroundColor = backgroundColorValue
         
         // Set Container View Default Background Color
-        containerView?.backgroundColor = CFAlertViewController.CF_ALERT_DEFAULT_CONTAINER_VIEW_BACKGROUND_COLOR()
+        containerView?.backgroundColor = CFAlertColors.CF_ALERT_DEFAULT_CONTAINER_VIEW_BACKGROUND_COLOR
         
         // Update Container View Properties
         if preferredStyle == .notification   {

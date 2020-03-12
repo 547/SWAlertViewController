@@ -8,26 +8,6 @@
 import UIKit
 
 public class CFAlertDoubleActionTableViewCell: UITableViewCell {
-
-    // MARK: - Declarations
-    public static func CF_DEFAULT_ACTION_COLOR() -> UIColor {
-        return UIColor(red: CGFloat(41.0 / 255.0), green: CGFloat(198.0 / 255.0), blue: CGFloat(77.0 / 255.0), alpha: CGFloat(1.0))
-    }
-    public static func CF_DEFAULT_ACTION_TEXT_COLOR() -> UIColor {
-        return UIColor.white
-    }
-    public static func CF_CANCEL_ACTION_COLOR() -> UIColor   {
-        return UIColor.gray.withAlphaComponent(0.3)
-    }
-    public static func CF_CANCEL_ACTION_TEXT_COLOR() -> UIColor {
-        return UIColor.gray
-    }
-    public static func CF_DESTRUCTIVE_ACTION_COLOR() -> UIColor  {
-        return UIColor(red: CGFloat(255.0 / 255.0), green: CGFloat(75.0 / 255.0), blue: CGFloat(75.0 / 255.0), alpha: CGFloat(1.0))
-    }
-    public static func CF_DESTRUCTIVE_ACTION_TEXT_COLOR() -> UIColor {
-        return UIColor.white
-    }
     
     
     // MARK: - Variables
@@ -98,10 +78,10 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     
                 case .Cancel:
                     if actionBackgroundColor == nil {
-                        actionBackgroundColor = CFAlertActionTableViewCell.CF_CANCEL_ACTION_COLOR()
+                        actionBackgroundColor = CFAlertColors.CF_CANCEL_ACTION_COLOR
                     }
                     if actionTextColor == nil {
-                        actionTextColor = CFAlertActionTableViewCell.CF_CANCEL_ACTION_TEXT_COLOR()
+                        actionTextColor = CFAlertColors.CF_CANCEL_ACTION_TEXT_COLOR
                     }
                     leftActionButton?.backgroundColor = UIColor.clear
                     leftActionButton?.setTitleColor(actionTextColor, for: .normal)
@@ -111,10 +91,10 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     
                 case .Destructive:
                     if actionBackgroundColor == nil {
-                        actionBackgroundColor = CFAlertActionTableViewCell.CF_DESTRUCTIVE_ACTION_COLOR()
+                        actionBackgroundColor = CFAlertColors.CF_DESTRUCTIVE_ACTION_COLOR
                     }
                     if actionTextColor == nil {
-                        actionTextColor = CFAlertActionTableViewCell.CF_DESTRUCTIVE_ACTION_TEXT_COLOR()
+                        actionTextColor = CFAlertColors.CF_DESTRUCTIVE_ACTION_TEXT_COLOR
                     }
                     leftActionButton?.backgroundColor = actionBackgroundColor
                     leftActionButton?.setTitleColor(actionTextColor, for: .normal)
@@ -123,10 +103,10 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     
                 default:
                     if actionBackgroundColor == nil {
-                        actionBackgroundColor = CFAlertActionTableViewCell.CF_DEFAULT_ACTION_COLOR()
+                        actionBackgroundColor = CFAlertColors.CF_DEFAULT_ACTION_COLOR
                     }
                     if actionTextColor == nil {
-                        actionTextColor = CFAlertActionTableViewCell.CF_DEFAULT_ACTION_TEXT_COLOR()
+                        actionTextColor = CFAlertColors.CF_DEFAULT_ACTION_TEXT_COLOR
                     }
                     leftActionButton?.backgroundColor = actionBackgroundColor
                     leftActionButton?.setTitleColor(actionTextColor, for: .normal)
@@ -210,10 +190,10 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     
                 case .Cancel:
                     if actionBackgroundColor == nil {
-                        actionBackgroundColor = CFAlertActionTableViewCell.CF_CANCEL_ACTION_COLOR()
+                        actionBackgroundColor = CFAlertColors.CF_CANCEL_ACTION_COLOR
                     }
                     if actionTextColor == nil {
-                        actionTextColor = CFAlertActionTableViewCell.CF_CANCEL_ACTION_TEXT_COLOR()
+                        actionTextColor = CFAlertColors.CF_CANCEL_ACTION_TEXT_COLOR
                     }
                     rightActionButton?.backgroundColor = UIColor.clear
                     rightActionButton?.setTitleColor(actionTextColor, for: .normal)
@@ -223,10 +203,10 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     
                 case .Destructive:
                     if actionBackgroundColor == nil {
-                        actionBackgroundColor = CFAlertActionTableViewCell.CF_DESTRUCTIVE_ACTION_COLOR()
+                        actionBackgroundColor = CFAlertColors.CF_DESTRUCTIVE_ACTION_COLOR
                     }
                     if actionTextColor == nil {
-                        actionTextColor = CFAlertActionTableViewCell.CF_DESTRUCTIVE_ACTION_TEXT_COLOR()
+                        actionTextColor = CFAlertColors.CF_DESTRUCTIVE_ACTION_TEXT_COLOR
                     }
                     rightActionButton?.backgroundColor = actionBackgroundColor
                     rightActionButton?.setTitleColor(actionTextColor, for: .normal)
@@ -235,10 +215,10 @@ public class CFAlertDoubleActionTableViewCell: UITableViewCell {
                     
                 default:
                     if actionBackgroundColor == nil {
-                        actionBackgroundColor = CFAlertActionTableViewCell.CF_DEFAULT_ACTION_COLOR()
+                        actionBackgroundColor = CFAlertColors.CF_DEFAULT_ACTION_COLOR
                     }
                     if actionTextColor == nil {
-                        actionTextColor = CFAlertActionTableViewCell.CF_DEFAULT_ACTION_TEXT_COLOR()
+                        actionTextColor = CFAlertColors.CF_DEFAULT_ACTION_TEXT_COLOR
                     }
                     rightActionButton?.backgroundColor = actionBackgroundColor
                     rightActionButton?.setTitleColor(actionTextColor, for: .normal)
