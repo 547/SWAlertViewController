@@ -41,6 +41,9 @@ open class CFAlertAction: NSObject, NSCopying {
     @objc public var borderColor:UIColor?
     public var borderWidth:CGFloat? = nil
     public var contentEdgeInsets:UIEdgeInsets? = nil
+    public var separationLineColor:UIColor? = nil
+    public var separationLineLeading:CGFloat? = nil
+    public var separationLineTrailing:CGFloat? = nil
     
     
     // MARK: - Initialisation Method
@@ -55,6 +58,9 @@ open class CFAlertAction: NSObject, NSCopying {
                                    borderColor:UIColor? = nil,
                                    borderWidth:CGFloat? = nil,
                                    contentEdgeInsets:UIEdgeInsets? = nil,
+                                   separationLineColor:UIColor? = nil,
+                                   separationLineLeading:CGFloat? = nil,
+                                   separationLineTrailing:CGFloat? = nil,
                                    handler: CFAlertActionHandlerBlock? = nil) -> CFAlertAction  {
         return CFAlertAction.init(title: title,
                                   leftImage: leftImage,
@@ -66,6 +72,9 @@ open class CFAlertAction: NSObject, NSCopying {
                                   cornerRadius: cornerRadius,
                                   borderColor: borderColor,
                                   borderWidth: borderWidth,
+                                  separationLineColor: separationLineColor,
+                                  separationLineLeading: separationLineLeading,
+                                  separationLineTrailing: separationLineTrailing,
                                   contentEdgeInsets: contentEdgeInsets,
                                   handler: handler)
     }
@@ -80,6 +89,9 @@ open class CFAlertAction: NSObject, NSCopying {
                                   cornerRadius:CGFloat? = nil,
                                   borderColor:UIColor? = nil,
                                   borderWidth:CGFloat? = nil,
+                                  separationLineColor:UIColor? = nil,
+                                  separationLineLeading:CGFloat? = nil,
+                                  separationLineTrailing:CGFloat? = nil,
                                   contentEdgeInsets:UIEdgeInsets? = nil,
                                   handler: CFAlertActionHandlerBlock? = nil) {
         
@@ -97,6 +109,9 @@ open class CFAlertAction: NSObject, NSCopying {
         self.cornerRadius = cornerRadius
         self.borderWidth = borderWidth
         self.borderColor = borderColor
+        self.separationLineColor = separationLineColor
+        self.separationLineLeading = separationLineLeading
+        self.separationLineTrailing = separationLineTrailing
         self.contentEdgeInsets = contentEdgeInsets
         self.handler = handler
     }
@@ -114,6 +129,9 @@ open class CFAlertAction: NSObject, NSCopying {
                                   cornerRadius: cornerRadius,
                                   borderColor: borderColor,
                                   borderWidth: borderWidth,
+                                  separationLineColor:separationLineColor,
+                                  separationLineLeading:separationLineLeading,
+                                  separationLineTrailing:separationLineTrailing,
                                   handler: handler)
     }
     

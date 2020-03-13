@@ -28,13 +28,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tapCustomButton(_ sender: UIButton) {
-        let cacel = CFAlertAction.init(title: "cancel", leftImage: nil, style: .Default, alignment: .justified, backgroundColor: UIColor.white, textColor: UIColor.blue, textFont: UIFont.systemFont(ofSize: 12), cornerRadius: 15, borderColor: UIColor.blue, borderWidth: 1.0, contentEdgeInsets: UIEdgeInsets(top: 10, left: 29, bottom: 10, right: 29), handler: nil)
-        let aa = CFAlertAction.init(title: "comfir", leftImage: nil, style: .Default, alignment: .justified, backgroundColor: UIColor.blue, textColor: UIColor.white, textFont: UIFont.systemFont(ofSize: 12), cornerRadius: 15, borderColor: nil, borderWidth: nil, contentEdgeInsets: UIEdgeInsets(top: 10, left: 29, bottom: 10, right: 29), handler: nil)
+        let bb = CFAlertAction.init(title: "bb", leftImage: nil, style: .Default, alignment: .center, backgroundColor: UIColor.white, textColor: UIColor.blue, textFont: UIFont.systemFont(ofSize: 12), cornerRadius: 15, borderColor: UIColor.blue, borderWidth: 1.0, separationLineColor: UIColor.gray, contentEdgeInsets: UIEdgeInsets(top: 10, left: 29, bottom: 10, right: 29), handler: nil)
+        let aa = CFAlertAction.init(title: "comfir", leftImage: nil, style: .Default, alignment: .center, backgroundColor: UIColor.white, textColor: UIColor.blue, textFont: UIFont.systemFont(ofSize: 12), cornerRadius: 15, borderColor: nil, borderWidth: nil, contentEdgeInsets: UIEdgeInsets(top: 10, left: 29, bottom: 10, right: 29), handler: nil)
+        
+        let cancel = CFAlertAction.init(title: "cancel", leftImage: nil, style: .Cancel, alignment: .center, backgroundColor: UIColor.white, textColor: UIColor.blue, textFont: UIFont.systemFont(ofSize: 12), cornerRadius: 15, borderColor: UIColor.blue, borderWidth: 1.0, contentEdgeInsets: UIEdgeInsets(top: 10, left: 29, bottom: 10, right: 29), handler: nil)
         
         let alert = CFAlertViewController.init(title: "test", titleColor: UIColor.black, message: "this is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is messagethis is message", messageColor: UIColor.gray, titleFont: UIFont.systemFont(ofSize: 12), messageFont: UIFont.systemFont(ofSize: 9), titleAndMessageSpace: 150, textAlignment: .center, separationLineColor: UIColor.gray.withAlphaComponent(0.3), separationLineLeading: 0, separationLineTrailing: 0, textContentBottomMargin: 64, separationLineHeight: 0.5, margin: 30, cornerRadius: 8, borderColor: nil, borderWidth: 0, actionsLeading: 46, actionsTrailing: 46, actionsTop: 18, actionsBottom: 18, actionsSpace: 18, actionsHeight: 30, preferredStyle: .actionSheet, actionsArrangement: .vertical, headerView: nil, footerView: nil, didDismissAlertHandler: nil)
         alert.backgroundStyle = .plain
-        alert.addAction(cacel)
+        alert.addAction(bb)
         alert.addAction(aa)
+        alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
     @IBAction func tapButton(_ sender: UIButton) {

@@ -11,7 +11,7 @@ import UIKit
 class CFAlertLeftImageActionTableViewCell: UITableViewCell {
     // MARK: Public
     public static func identifier() -> String    {
-        return String(describing: CFAlertActionTableViewCell.self)
+        return String(describing: CFAlertLeftImageActionTableViewCell.self)
     }
     public weak var delegate: CFAlertActionTableViewCellDelegate?
     public var actionButtonTopMargin: CGFloat = 0.0 {
@@ -99,39 +99,41 @@ class CFAlertLeftImageActionTableViewCell: UITableViewCell {
                 if let font = textFont {
                     actionTitleLabel?.font = font
                 }
-                
+                actionImageViewLeadingConstraint?.constant = action.leftImage == nil ? 0 : 16
+                actionImageViewWidthConstraint?.constant = action.leftImage == nil ? 0 : 30
+                actionTitleLabelLeadingConstraint?.constant = action.leftImage == nil ? 0 : 8
                 // Set Alignment
                 switch action.alignment {
                     
                 case .right:
                     // Right Align
-                    actionViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 749.0)
-                    actionViewCenterXConstraint?.isActive = false
-                    actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 751.0)
+                    actionViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 1)
+                    actionViewCenterXConstraint?.priority = UILayoutPriority(rawValue: 1)
+                    actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 999)
                     // Set Content Edge Inset
                     actionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
                     
                 case .left:
                     // Left Align
-                    actionViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 751.0)
-                    actionViewCenterXConstraint?.isActive = false
-                    actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 749.0)
+                    actionViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 999)
+                    actionViewCenterXConstraint?.priority = UILayoutPriority(rawValue: 1)
+                    actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 1)
                     // Set Content Edge Inset
                     actionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
                     
                 case .center:
                     // Center Align
-                    actionViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 750.0)
-                    actionViewCenterXConstraint?.isActive = true
-                    actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 750.0)
+                    actionViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 999)
+                    actionViewCenterXConstraint?.priority = UILayoutPriority(rawValue: 999)
+                    actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 999)
                     // Set Content Edge Inset
                     actionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
                     
                 default:
                     // Justified Align
-                    actionViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 751.0)
-                    actionViewCenterXConstraint?.isActive = false
-                    actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 751.0)
+                    actionViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 999)
+                    actionViewCenterXConstraint?.priority = UILayoutPriority(rawValue: 1)
+                    actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 999)
                     // Set Content Edge Inset
                     actionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 15.0, left: 20.0, bottom: 15.0, right: 20.0)
                 }
@@ -139,10 +141,18 @@ class CFAlertLeftImageActionTableViewCell: UITableViewCell {
                 // Set Title
                 actionTitleLabel?.text = self.action?.title
                 actionImageView?.image = self.action?.leftImage
+                
+                bottomLine.backgroundColor = self.action?.separationLineColor
+                bottonLineLeadingSpaceConstraint?.constant = self.action?.separationLineLeading ?? 0
+                bottonLineTrailingSpaceConstraint?.constant = self.action?.separationLineTrailing ?? 0
+                
             }else {
                 // Set Blank Title
                 actionTitleLabel?.text = nil
                 actionImageView?.image = nil
+                
+                bottonLineLeadingSpaceConstraint?.constant = 0
+                bottonLineTrailingSpaceConstraint?.constant = 0
             }
         }
     }
@@ -152,6 +162,15 @@ class CFAlertLeftImageActionTableViewCell: UITableViewCell {
     @IBOutlet private var actionButton: CFPushButton?
     @IBOutlet private var actionImageView: UIImageView?
     @IBOutlet private var actionTitleLabel: UILabel?
+    @IBOutlet weak var bottomLine: UIView!
+    @IBOutlet private weak var actionImageViewLeadingConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var actionImageViewWidthConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var actionTitleLabelLeadingConstraint: NSLayoutConstraint?
+    //    @IBOutlet private weak var bottonLineTopConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var bottonLineLeadingSpaceConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var bottonLineTrailingSpaceConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var bottonLineBottomConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var bottonLineHeightConstraint: NSLayoutConstraint?
     @IBOutlet private weak var actionViewTopConstraint: NSLayoutConstraint?
     @IBOutlet private weak var actionViewLeadingConstraint: NSLayoutConstraint?
     @IBOutlet private weak var actionViewCenterXConstraint: NSLayoutConstraint?
@@ -176,8 +195,6 @@ class CFAlertLeftImageActionTableViewCell: UITableViewCell {
     
     internal func basicInitialisation() {
         // Set Action Button Properties
-        actionView?.layer.cornerRadius = 6.0
-        actionButton?.layer.cornerRadius = 6.0
         actionButton?.pushTransformScaleFactor = 0.9
     }
     
@@ -188,8 +205,6 @@ class CFAlertLeftImageActionTableViewCell: UITableViewCell {
         contentView.setNeedsLayout()
         contentView.layoutIfNeeded()
     }
-    
-    
     // MARK: - Button Click Events
     @IBAction internal func actionButtonClicked(_ sender: Any) {
         if let delegate = delegate {

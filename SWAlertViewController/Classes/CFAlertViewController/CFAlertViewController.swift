@@ -196,7 +196,34 @@ open class CFAlertViewController: UIViewController    {
     
     internal var actionList = [CFAlertAction]()
     private var notCancelActionList = [CFAlertAction]()
-    private var cancelAction:CFAlertAction? = nil
+    private var cancelAction:CFAlertAction? = nil{
+        didSet{
+            if let cancelAction = self.cancelAction, self.preferredStyle == .actionSheet {
+                cancelButton.setTitle(cancelAction.title, for: .normal)
+                cancelButton.titleLabel?.font = cancelAction.textFont
+                cancelButton.setTitleColor(cancelAction.textColor, for: .normal)
+                switch cancelAction.alignment {
+                case .justified:
+                    cancelButton.contentHorizontalAlignment = .fill
+                    cancelButton.titleLabel?.textAlignment = .justified
+                case .right:
+                    cancelButton.contentHorizontalAlignment = .right
+                    cancelButton.titleLabel?.textAlignment = .right
+                case .left:
+                    cancelButton.contentHorizontalAlignment = .left
+                    cancelButton.titleLabel?.textAlignment = .left
+                case .center:
+                    cancelButton.contentHorizontalAlignment = .center
+                    cancelButton.titleLabel?.textAlignment = .center
+                }
+                cancelButton.backgroundColor = cancelAction.backgroundColor ?? CFAlertColors.CF_ALERT_DEFAULT_CONTAINER_VIEW_BACKGROUND_COLOR
+                cancelButton.layer.cornerRadius = cancelAction.cornerRadius ?? 10.0
+                cancelButton.layer.borderColor = (cancelAction.borderColor ?? UIColor.clear).cgColor
+                cancelButton.layer.borderWidth = cancelAction.borderWidth ?? 0
+                cancelButton.contentEdgeInsets = cancelAction.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
+            }
+        }
+    }
     internal var dismissHandler: CFAlertViewControllerDismissBlock?
     internal var keyboardHeight: CGFloat = 0.0   {
         
@@ -618,35 +645,10 @@ open class CFAlertViewController: UIViewController    {
             containerView?.layer.cornerRadius = 10.0
         }
         else if preferredStyle == .actionSheet   {
-            if let cancelAction = cancelAction {
-                cancelButton.setTitle(cancelAction.title, for: .normal)
-                cancelButton.titleLabel?.font = cancelAction.textFont
-                cancelButton.setTitleColor(cancelAction.textColor, for: .normal)
-                switch cancelAction.alignment {
-                case .justified:
-                    cancelButton.contentHorizontalAlignment = .fill
-                    cancelButton.titleLabel?.textAlignment = .justified
-                case .right:
-                    cancelButton.contentHorizontalAlignment = .right
-                    cancelButton.titleLabel?.textAlignment = .right
-                case .left:
-                    cancelButton.contentHorizontalAlignment = .left
-                    cancelButton.titleLabel?.textAlignment = .left
-                case .center:
-                    cancelButton.contentHorizontalAlignment = .center
-                    cancelButton.titleLabel?.textAlignment = .center
-                }
-                cancelButton.backgroundColor = cancelAction.backgroundColor ?? CFAlertColors.CF_ALERT_DEFAULT_CONTAINER_VIEW_BACKGROUND_COLOR
-                cancelButton.layer.cornerRadius = cancelAction.cornerRadius ?? 10.0
-                cancelButton.layer.borderColor = (cancelAction.borderColor ?? UIColor.clear).cgColor
-                cancelButton.layer.borderWidth = cancelAction.borderWidth ?? 0
-                cancelButton.contentEdgeInsets = cancelAction.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
-            }
             containerView?.backgroundColor  = UIColor.clear
             tableView?.backgroundColor = CFAlertColors.CF_ALERT_DEFAULT_CONTAINER_VIEW_BACKGROUND_COLOR
-            cancelButton.backgroundColor = CFAlertColors.CF_ALERT_DEFAULT_CONTAINER_VIEW_BACKGROUND_COLOR
             containerView?.layer.cornerRadius = 10.0
-            cancelButton.layer.cornerRadius = 10.0
+            tableView?.layer.cornerRadius = 10.0
         }
         else if preferredStyle == .customActionSheet   {
             containerView?.layer.cornerRadius = 10.0

@@ -6,7 +6,7 @@
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
-import Foundation
+import UIKit
 @objc public enum CFAlertControllerDismissReason : Int {
     case none = 0
     case onActionTap
