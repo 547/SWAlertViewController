@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SWAlertViewController'
-  s.version          = '0.2.2'
+  s.version          = '1.0.0'
   s.summary          = '基于CFAlertViewController修改的自定义性更强的AlertViewController.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-基于CFAlertViewController修改的自定义性更强的AlertViewController.可以修改字体，颜色，两个并列的按钮
+基于CFAlertViewController修改的自定义性更强的AlertViewController.可以修改字体，颜色，两个并列的按钮, 类似的原生action sheet
                        DESC
 
   s.homepage         = 'https://github.com/547/SWAlertViewController'
