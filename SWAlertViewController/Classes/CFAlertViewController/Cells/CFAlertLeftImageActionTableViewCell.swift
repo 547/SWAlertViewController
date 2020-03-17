@@ -112,7 +112,7 @@ class CFAlertLeftImageActionTableViewCell: UITableViewCell {
                     actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 999)
                     // Set Content Edge Inset
                     actionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
-                    
+                    actionTitleLabel?.textAlignment = .right
                 case .left:
                     // Left Align
                     actionViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 999)
@@ -120,7 +120,7 @@ class CFAlertLeftImageActionTableViewCell: UITableViewCell {
                     actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 1)
                     // Set Content Edge Inset
                     actionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
-                    
+                    actionTitleLabel?.textAlignment = .left
                 case .center:
                     // Center Align
                     actionViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 999)
@@ -128,7 +128,7 @@ class CFAlertLeftImageActionTableViewCell: UITableViewCell {
                     actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 999)
                     // Set Content Edge Inset
                     actionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 12.0, left: 20.0, bottom: 12.0, right: 20.0)
-                    
+                    actionTitleLabel?.textAlignment = .center
                 default:
                     // Justified Align
                     actionViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 999)
@@ -136,6 +136,7 @@ class CFAlertLeftImageActionTableViewCell: UITableViewCell {
                     actionViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 999)
                     // Set Content Edge Inset
                     actionButton?.contentEdgeInsets = action.contentEdgeInsets ?? UIEdgeInsets.init(top: 15.0, left: 20.0, bottom: 15.0, right: 20.0)
+                    actionTitleLabel?.textAlignment = .justified
                 }
                 
                 // Set Title
