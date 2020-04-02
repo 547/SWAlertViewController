@@ -1012,10 +1012,10 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
             
         case 1:
             if self.preferredStyle != .actionSheet {
+                result = self.actionList.count
                 if actionsArrangement == .horizontal, (self.actions?.count ?? 0) >= 2 {
                     result = 1
                 }
-                result = self.actionList.count
             }else {
                 result = self.notCancelActionList.count
             }
