@@ -61,6 +61,9 @@ class CFAlertLeftImageActionTableViewCell: UITableViewCell {
                 var actionBackgroundColor: UIColor? = action.backgroundColor
                 var actionTextColor: UIColor? = action.textColor
                 let textFont = action.textFont
+                let cornerRadius = action.cornerRadius
+                let borderWidth = action.borderWidth
+                let borderColor = action.borderColor
                 
                 switch action.style {
                     
@@ -98,6 +101,16 @@ class CFAlertLeftImageActionTableViewCell: UITableViewCell {
                 actionButton?.backgroundColor = contentView.backgroundColor
                 if let font = textFont {
                     actionTitleLabel?.font = font
+                }
+                if let cornerRadius = cornerRadius {
+                    actionView?.layer.cornerRadius = cornerRadius
+                    actionView?.clipsToBounds = true
+                }
+                if let borderWidth = borderWidth {
+                    actionView?.layer.borderWidth = borderWidth
+                }
+                if let borderColor = borderColor {
+                    actionView?.layer.borderColor = borderColor.cgColor
                 }
                 actionImageViewLeadingConstraint?.constant = action.leftImage == nil ? 0 : 16
                 actionImageViewWidthConstraint?.constant = action.leftImage == nil ? 0 : 30

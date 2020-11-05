@@ -15,6 +15,7 @@ public extension CFAlertViewController {
                                  messageColor: UIColor? = nil,
                                  titleFont: UIFont? = nil,
                                  messageFont:UIFont? = nil,
+                                 titleBackgroundViewColor:UIColor? = nil,
                                  titleAndMessageSpace:CGFloat? = nil,
                                  textAlignment: NSTextAlignment = .center,
                                  separationLineColor:UIColor? = nil,
@@ -46,7 +47,7 @@ public extension CFAlertViewController {
                                  presentCompletion completion: (() -> Void)? = nil,
                                  didDismissAlertHandler dismiss: CFAlertViewControllerDismissBlock?) -> CFAlertViewController{
         
-        let alert = CFAlertViewController.init(title: title, titleColor: titleColor, message: message, messageColor: messageColor, titleFont: titleFont, messageFont: messageFont, titleAndMessageSpace: titleAndMessageSpace, textAlignment: textAlignment, separationLineColor: separationLineColor, separationLineLeading: separationLineLeading, separationLineTrailing: separationLineTrailing, textContentTopMargin: textContentTopMargin, textContentBottomMargin: textContentBottomMargin, separationLineHeight: separationLineHeight, margin: margin, cornerRadius: cornerRadius, borderColor: borderColor, borderWidth: borderWidth, actionsLeading: actionsLeading, actionsTrailing: actionsTrailing, actionsTop: actionsTop, actionsBottom: actionsBottom, actionsSpace: actionsSpace, actionsHeight: actionsHeight, preferredStyle: preferredStyle, actionsArrangement: actionsArrangement, headerView: headerView, footerView: footerView, didDismissAlertHandler: dismiss)
+        let alert = CFAlertViewController.init(title: title, titleColor: titleColor, message: message, messageColor: messageColor, titleFont: titleFont, messageFont: messageFont, titleBackgroundViewColor: titleBackgroundViewColor, titleAndMessageSpace: titleAndMessageSpace, textAlignment: textAlignment, separationLineColor: separationLineColor, separationLineLeading: separationLineLeading, separationLineTrailing: separationLineTrailing, textContentTopMargin: textContentTopMargin, textContentBottomMargin: textContentBottomMargin, separationLineHeight: separationLineHeight, margin: margin, cornerRadius: cornerRadius, borderColor: borderColor, borderWidth: borderWidth, actionsLeading: actionsLeading, actionsTrailing: actionsTrailing, actionsTop: actionsTop, actionsBottom: actionsBottom, actionsSpace: actionsSpace, actionsHeight: actionsHeight, preferredStyle: preferredStyle, actionsArrangement: actionsArrangement, headerView: headerView, footerView: footerView, didDismissAlertHandler: dismiss)
         if let color = backgroundColor {
             alert.backgroundColor = color
         }

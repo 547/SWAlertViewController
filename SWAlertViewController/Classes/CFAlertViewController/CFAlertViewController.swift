@@ -79,21 +79,6 @@ open class CFAlertViewController: UIViewController    {
                     self.tableViewWidthConstraint?.constant = 500
                     self.tableViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 751)
                     self.tableViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 751)
-                }else if self.preferredStyle == .customActionSheet{
-                    if #available(iOS 11.0, *) {
-                        self.mainViewTopConstraint?.constant = self.view.safeAreaInsets.top
-                        self.mainViewBottomConstraint?.constant = self.view.safeAreaInsets.bottom
-                    }
-                    
-                    self.containerViewTopConstraint?.isActive = false
-                    self.containerViewLeadingConstraint?.constant = 10
-                    self.containerViewCenterYConstraint?.isActive = false
-                    self.containerViewBottomConstraint?.isActive = true
-                    self.containerViewTrailingConstraint?.constant = 10
-                    
-                    self.tableViewWidthConstraint?.constant = 500
-                    self.tableViewLeadingConstraint?.priority = UILayoutPriority(rawValue: 751)
-                    self.tableViewTrailingConstraint?.priority = UILayoutPriority(rawValue: 751)
                 }
                 if let margin = self.margin {
                     self.containerViewLeadingConstraint?.constant = margin
@@ -175,6 +160,7 @@ open class CFAlertViewController: UIViewController    {
     internal var titleString: String?
     internal var titleColor: UIColor = CFAlertColors.CF_ALERT_DEFAULT_TITLE_COLOR
     internal var titleFont: UIFont? = nil
+    internal var titleBackgroundViewColor: UIColor = CFAlertColors.CF_ALERT_DEFAULT_CONTAINER_VIEW_BACKGROUND_COLOR
     internal var messageString: String?
     internal var messageColor: UIColor = CFAlertColors.CF_ALERT_DEFAULT_MESSAGE_COLOR
     internal var messageFont: UIFont? = nil
@@ -269,6 +255,7 @@ open class CFAlertViewController: UIViewController    {
                                             message: String?,
                                             titleFont: UIFont?,
                                             messageFont:UIFont?,
+                                            titleBackgroundViewColor: UIColor?,
                                             titleAndMessageSpace:CGFloat?,
                                             textAlignment: NSTextAlignment,
                                             separationLineColor:UIColor? = nil,
@@ -297,6 +284,7 @@ open class CFAlertViewController: UIViewController    {
                                                      messageColor: nil,
                                                      titleFont: titleFont,
                                                      messageFont: messageFont,
+                                                     titleBackgroundViewColor: titleBackgroundViewColor,
                                                      titleAndMessageSpace: titleAndMessageSpace,
                                                      textAlignment: textAlignment,
                                                      separationLineColor:separationLineColor,
@@ -328,6 +316,7 @@ open class CFAlertViewController: UIViewController    {
                                             messageColor: UIColor?,
                                             titleFont: UIFont?,
                                             messageFont:UIFont?,
+                                            titleBackgroundViewColor: UIColor?,
                                             titleAndMessageSpace:CGFloat?,
                                             textAlignment: NSTextAlignment,
                                             separationLineColor:UIColor? = nil,
@@ -359,6 +348,7 @@ open class CFAlertViewController: UIViewController    {
                                           messageColor: messageColor,
                                           titleFont: titleFont,
                                           messageFont: messageFont,
+                                          titleBackgroundViewColor: titleBackgroundViewColor,
                                           titleAndMessageSpace: titleAndMessageSpace,
                                           textAlignment: textAlignment,
                                           separationLineColor:separationLineColor,
@@ -388,6 +378,7 @@ open class CFAlertViewController: UIViewController    {
                                   message: String?,
                                   titleFont: UIFont?,
                                   messageFont:UIFont?,
+                                  titleBackgroundViewColor: UIColor?,
                                   titleAndMessageSpace:CGFloat?,
                                   textAlignment: NSTextAlignment,
                                   separationLineColor:UIColor? = nil,
@@ -417,6 +408,7 @@ open class CFAlertViewController: UIViewController    {
                   messageColor: nil,
                   titleFont: titleFont,
                   messageFont: messageFont,
+                  titleBackgroundViewColor: titleBackgroundViewColor,
                   titleAndMessageSpace: titleAndMessageSpace,
                   textAlignment: textAlignment,
                   separationLineColor:separationLineColor,
@@ -448,6 +440,7 @@ open class CFAlertViewController: UIViewController    {
                                   messageColor: UIColor?,
                                   titleFont: UIFont?,
                                   messageFont:UIFont?,
+                                  titleBackgroundViewColor: UIColor?,
                                   titleAndMessageSpace:CGFloat?,
                                   textAlignment: NSTextAlignment,
                                   separationLineColor:UIColor? = nil,
@@ -497,6 +490,9 @@ open class CFAlertViewController: UIViewController    {
         }
         if let messageFont = messageFont {
             self.messageFont = messageFont
+        }
+        if let titleBackgroundViewColor = titleBackgroundViewColor {
+            self.titleBackgroundViewColor = titleBackgroundViewColor
         }
         if let titleAndMessageSpace = titleAndMessageSpace {
             self.titleAndMessageSpace = titleAndMessageSpace
@@ -586,12 +582,6 @@ open class CFAlertViewController: UIViewController    {
                                                                                      contentScrollView: tableView)
             transitioningDelegate = interactiveTransitionDelegate
         }
-        else if self.preferredStyle == .customActionSheet {
-            interactiveTransitionDelegate =  CFAlertActionSheetInteractiveTransition(modalViewController: self,
-                                                                                     swipeGestureView: containerView,
-                                                                                     contentScrollView: tableView)
-            transitioningDelegate = interactiveTransitionDelegate
-        }
         interactiveTransitionDelegate?.delegate = self
         
         // Update Background Tap
@@ -650,11 +640,9 @@ open class CFAlertViewController: UIViewController    {
             containerView?.layer.cornerRadius = 10.0
             tableView?.layer.cornerRadius = 10.0
         }
-        else if preferredStyle == .customActionSheet   {
-            containerView?.layer.cornerRadius = 10.0
-        }
         if let cornerRadius = cornerRadius {
             containerView?.layer.cornerRadius = cornerRadius
+            tableView?.layer.cornerRadius = cornerRadius
         }
         if let borderWidth = borderWidth {
             containerView?.layer.borderWidth = borderWidth
@@ -1038,6 +1026,7 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
             let titleSubtitleCell: CFAlertTitleSubtitleTableViewCell? = (cell as? CFAlertTitleSubtitleTableViewCell)
             // Set Content
             titleSubtitleCell?.setTitle(titleString, titleColor: titleColor, titleFont: titleFont, subtitle: messageString, subtitleColor: messageColor, subtitleFont: messageFont, bottomLineColor: separationLineColor, alignment: textAlignment!)
+            titleSubtitleCell?.contentView.backgroundColor = titleBackgroundViewColor
             // Set Content Margin
             titleSubtitleCell?.contentTopMargin = self.textContentTopMargin ?? 20.0
             
