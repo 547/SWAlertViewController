@@ -127,12 +127,12 @@
 		5C2ACE1B2329DCF2001D109A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				5C2ACE1C2329DCF2001D109A /* CFAlertDoubleActionTableViewCell.xib */,
-				5C2ACE1D2329DCF2001D109A /* CFAlertActionTableViewCell.xib */,
 				5C2ACE1E2329DCF2001D109A /* CFAlertTitleSubtitleTableViewCell.swift */,
 				5C2ACE1F2329DCF2001D109A /* CFAlertTitleSubtitleTableViewCell.xib */,
 				5C2ACE202329DCF2001D109A /* CFAlertActionTableViewCell.swift */,
+				5C2ACE1D2329DCF2001D109A /* CFAlertActionTableViewCell.xib */,
 				5C2ACE212329DCF2001D109A /* CFAlertDoubleActionTableViewCell.swift */,
+				5C2ACE1C2329DCF2001D109A /* CFAlertDoubleActionTableViewCell.xib */,
 				5CC46C57241A18B700542518 /* CFAlertLeftImageActionTableViewCell.swift */,
 				5CC46C58241A18B700542518 /* CFAlertLeftImageActionTableViewCell.xib */,
 			);
